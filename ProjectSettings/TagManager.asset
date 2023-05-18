@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Terrain
+  - Creature
+  - Item
+  - Building
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Creatures
+  - Water
+  - UI
+  - Foreground
+  - Background
+  - Objects
+  - PlayerTriggers
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Terrain
+    uniqueID: 1866581795
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Mobs
+    uniqueID: 1219024441
+    locked: 0
+  - name: Actors
+    uniqueID: 3314846223
+    locked: 0
+  - name: Effects
+    uniqueID: 4233822683
+    locked: 0
+  - name: Ingame Overlay
+    uniqueID: 112585611
+    locked: 0
