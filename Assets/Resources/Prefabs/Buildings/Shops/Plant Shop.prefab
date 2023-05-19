@@ -13,36 +13,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[0].Cost
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[0].Item
       value: 
-      objectReference: {fileID: 222666570693592656, guid: 292942cc75ef9ba48a4ec8c070302a44, type: 3}
+      objectReference: {fileID: 5838067984206625777, guid: 0996901a124c1914d83f93730bbcde63, type: 3}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[1].Cost
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[1].Item
       value: 
-      objectReference: {fileID: 5838067984206625777, guid: 0996901a124c1914d83f93730bbcde63, type: 3}
+      objectReference: {fileID: 5838067984206625777, guid: e5b47aac392df7a428f9c5f993af7d96, type: 3}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[2].Cost
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[2].Item
       value: 
-      objectReference: {fileID: 5838067984206625777, guid: e5b47aac392df7a428f9c5f993af7d96, type: 3}
+      objectReference: {fileID: 5838067984206625777, guid: 0c0e4a582a0a030498652a6c19b2daf2, type: 3}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[3].Cost
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[3].Item
       value: 
-      objectReference: {fileID: 5838067984206625777, guid: 0c0e4a582a0a030498652a6c19b2daf2, type: 3}
+      objectReference: {fileID: 1434695873138036315, guid: 66134a46b46e94146aaf5c4366874e5d, type: 3}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[4].Cost
       value: 200
@@ -98,6 +98,10 @@ PrefabInstance:
     - target: {fileID: 5042949914330280133, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042949914330280134, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
+      propertyPath: MobName
+      value: Seed Bank
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}

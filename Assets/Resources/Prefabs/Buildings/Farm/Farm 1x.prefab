@@ -349,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!95 &5350753101876807177
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -366,7 +366,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5350753102010905279
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,10 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d3c400ef62e624bb971f609cb49755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbody: {fileID: 0}
+  rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
-  MobName: Farm x1
+  MobName: Small Forest
   ConstructionCollider: {fileID: 7346579238120891049}
   BuildingTexture: {fileID: 0}
   BuildCost: 20

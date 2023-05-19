@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[4].Item
       value: 
-      objectReference: {fileID: 5838067984206625777, guid: 0c0e4a582a0a030498652a6c19b2daf2, type: 3}
+      objectReference: {fileID: 8233449647150354695, guid: 29f92c9614e6f3f4baa61c62c67a46f0, type: 3}
     - target: {fileID: 888556267524251566, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: IsMiningDropoff
       value: 1
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5042949914330280134, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: MobName
-      value: General Shop
+      value: Home
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}

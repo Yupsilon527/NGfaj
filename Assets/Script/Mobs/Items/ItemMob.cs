@@ -53,6 +53,7 @@ public class ItemMob : Mob
     }
     public virtual void OnDrop()
     {
+        SetSuspended(false);
         gameObject.SetActive(true);
         HandleOrbit();
     }

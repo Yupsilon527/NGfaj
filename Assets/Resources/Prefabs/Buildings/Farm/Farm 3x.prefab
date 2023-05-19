@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1791812468029010200, guid: 7a8fe54f445a666419d6de638cb30f83, type: 3}
       propertyPath: MobName
-      value: Farm x3
+      value: Large Forest
       objectReference: {fileID: 0}
     - target: {fileID: 1791812468029010200, guid: 7a8fe54f445a666419d6de638cb30f83, type: 3}
       propertyPath: BuildCost

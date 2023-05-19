@@ -14,8 +14,8 @@ public class PlayerInput : PlayerComponent
     public Vector2 miscInput;
     public void HandleControls()
     {
-        moveInput.x = Input.GetAxis("Horizontal");
-        moveInput.y = Input.GetAxis("Vertical");
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetButtonDown("Cancel"))
         {

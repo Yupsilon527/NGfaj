@@ -38,10 +38,7 @@ public class PlayerDigging : PlayerComponent
         {
             lastDigTime = Time.time + parent.GetDigTime();
             new ExplosionData((Vector2)transform.position + digVector * parent.DigRange, parent.DigRadius, 0, 0, parent.GetDigDamage(), 0).Explode();
-            /*if (!parent.movement.IsGrounded())
-            {
-                break;
-            }*/
+            
         }
     }
     public void StopDigging()

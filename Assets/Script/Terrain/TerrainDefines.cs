@@ -24,7 +24,7 @@ public static class TerrainDefines
         new Color(.5f,.5f,.5f),
         new Color(1f,.85f,0),
         new Color(.8f,.8f,.8f),
-        new Color(1f,0,0),
+        new Color(0,0,0),
     };
     public enum Behavior
     {

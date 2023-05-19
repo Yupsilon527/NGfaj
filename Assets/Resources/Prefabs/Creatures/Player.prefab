@@ -683,12 +683,12 @@ MonoBehaviour:
   GroundTime: 0.1
   LastGroundTime: 0
   BelowAngle: 75
-  ThrowStrength: 0.33
-  DigRange: 0.15
-  DigRadius: 0.5
+  ThrowStrength: 0.15
+  DigRange: 0.25
+  DigRadius: 0.4
   DigCooldown: 0.1
   DigCooldownUpgrades: 0.1
-  MoveSpeedMultiplier: 1.4
+  MoveSpeedMultiplier: 1.2
   DigStrengthUpgrades: 1
   collider: {fileID: 0}
   digging: {fileID: 0}
