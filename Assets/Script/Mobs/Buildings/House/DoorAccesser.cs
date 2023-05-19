@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorAccesser : MonoBehaviour
+public class DoorAccesser : PlayerComponent
 {
-    public Player parent;
     public CompartimentComponent HouseInRange;
     private void Update()
     {
         if (Input.GetButtonDown("Enter"))
         {
-            if (parent.movement.IsInside())
+            if (parent.IsInside())
             {
                 ExitHouse();
             }
@@ -21,20 +20,20 @@ public class DoorAccesser : MonoBehaviour
         }
         if (Input.GetButtonDown("Dig"))
         {
-            if (parent.movement.IsInside())
+            if (parent.IsInside())
             {
-                parent.backpack.TransferItem( parent.movement.indoor.GetComponent<InventoryComponent>());
+                parent.backpack.TransferItem( parent.indoor.GetComponent<InventoryComponent>());
             }
         }
     }
     void EnterHouse()
     {
         parent.menu.OpenIndoorsMenu((HouseMob)HouseInRange.Owner);
-        HouseInRange.LoadMob(parent.movement);
+        HouseInRange.LoadMob(parent);
     }
     void ExitHouse()
     {
         parent.menu.CloseMenu();
-        parent.movement.ExitBuilding();
+        parent.ExitBuilding();
     }
 }

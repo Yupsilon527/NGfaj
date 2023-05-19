@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuilderComponent : MobComponent
+public class BuilderComponent : PlayerComponent
 {
     public BuildingMob activeBuilding;
     public int BuildingSkill = 10;
     Coroutine buildCoroutine;
-    public Player parent;
     public void BuildBuilding(BuildingMob building)
     {
         if (buildCoroutine!=null)
@@ -58,7 +57,7 @@ public class BuilderComponent : MobComponent
     }
     IEnumerator StartBuilding(BuildingMob building)
     {
-        parent.movement.CanMove = false;
+        parent.CanMove = false;
         float buildPercent = (building.BuildTime > 0) ? (BuildingSkill * 10 * Time.deltaTime / building.BuildTime) : 100;
 
     loopstart:
@@ -67,7 +66,7 @@ public class BuilderComponent : MobComponent
         if (parent.resources.ChargeValue(ResourceController.Resources.wood, buildPercent * building.BuildCost * .01f))
         {
             building.IncreaseBuildPercentage(buildPercent);
-            if (building == null || building.GetBuildingPercentage() >= 100 || parent.moveInput.x != 0 || Input.GetButtonDown("Jump"))
+            if (building == null || building.GetBuildingPercentage() >= 100 || parent.input.moveInput.x != 0 || Input.GetButtonDown("Jump"))
                 StopBuilding();
             else
                 goto loopstart;
@@ -79,7 +78,7 @@ public class BuilderComponent : MobComponent
     }
     void StopBuilding()
     {
-        parent.movement.CanMove = true;
+        parent.CanMove = true;
         buildCoroutine = null;
     }
     

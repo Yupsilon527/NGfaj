@@ -96,7 +96,7 @@ MonoBehaviour:
   RequiresGroundToUse: 0
   ThrowSpeed: 6
   GoldValue: 0
-  StartStuck: 0
+  StartSuspended: 0
   DetonationForce: 10
   DetonationDuration: 0
   ExplosionRadius:
@@ -104,6 +104,6 @@ MonoBehaviour:
   - 1.4
   - 0.8
   ExplosionDamage: 000000000300000002000000
-  CreatureDamage: 0
+  CreatureDamage: 25
   KnockbackForce: 100
   KnockbackRange: 1.6

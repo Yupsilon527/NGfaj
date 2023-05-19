@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthController : MobComponent
+public class HealthController : CreatureComponent
 {
     public Resource Health;
     public float RegenerationPercent = 10;
+    public float OxygenUpkeep = 3;
     public float OxygenDamage = 5;
 
-    protected override void Awake()
+    public override void Awake()
     {
         base.Awake();
-        Health = new Resource(Owner, 100, "Health", false, true);
+        Health = new Resource(parent, 100, "Health", false, true);
         Health.OnValueChanged.AddListener(() =>
         {
             CheckAliveState();
@@ -21,7 +22,7 @@ public class HealthController : MobComponent
     {
         if (Health.GetPercentage() <= 0)
         {
-            Owner.Kill();
+            parent.Kill();
         }
     }
     private void Update()
@@ -30,9 +31,12 @@ public class HealthController : MobComponent
     }
     void HandleMetabolism()
     {
-        if (Owner.IsInside())
+        if (parent.IsInside())
             Health.GiveValue(RegenerationPercent * Time.deltaTime);
         if (AtmosphereController.oxygen.GetPercentage() == 0)
             Health.SubstractValue(OxygenDamage * Time.deltaTime);
+        else
+            AtmosphereController.oxygen.SubstractValue(OxygenUpkeep * Time.deltaTime);
+            
     }
 }

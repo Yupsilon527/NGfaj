@@ -25,7 +25,7 @@ public class ItemMob : Mob
         Vector2 throwVel = user.GetForwardVector(true) * ThrowSpeed + Vector2.up * ThrowSpeed;
         if (container!=null)
         container.UnloadItem(this);
-        rbody.velocity = throwVel.x* user.transform.right + throwVel.y * user.transform.up;
+        rigidbody.velocity = throwVel.x* user.transform.right + throwVel.y * user.transform.up;
     }
     public override bool IsInside()
     {
@@ -53,7 +53,7 @@ public class ItemMob : Mob
         DropFromContainer();
         base.Kill();
     }
-    public virtual void OnSold(Player sellingPlayer)
+    public virtual void OnSold(PlayerMob sellingPlayer)
     {
         sellingPlayer.resources.GiveResource( ResourceController.Resources.gold ,GoldValue);
     }
@@ -80,10 +80,10 @@ public class ItemMob : Mob
     public bool StartSuspended = false;
 public void SetSuspended(bool value)
     {
-        rbody.bodyType = value ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
+        rigidbody.bodyType = value ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
     }
     public bool IsSuspended()
     {
-        return rbody.bodyType == RigidbodyType2D.Static;
+        return rigidbody.bodyType == RigidbodyType2D.Static;
     }
 }

@@ -160,4 +160,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalValue: 100
-  OxygenLossPerSecond: 0.5

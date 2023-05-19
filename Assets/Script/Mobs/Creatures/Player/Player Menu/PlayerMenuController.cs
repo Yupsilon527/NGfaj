@@ -91,7 +91,7 @@ public class PlayerMenuController : MonoBehaviour
                     listle.name = "Entry " + Value;
 
                     RectTransform tRect = listle.GetComponent<RectTransform>();
-                    tRect.anchoredPosition = Vector2.down * (rectHeight + tRect.rect.height * .5f);
+                    tRect.anchoredPosition = Vector2.down * (rectHeight - (tRect.rect.height * .5f * nEntries));
                     tRect.localScale = Vector3.one;
                     tRect.localRotation = Quaternion.identity;
                     tRect.sizeDelta = entries[0].GetComponent<RectTransform>().sizeDelta;

@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerDigging : MonoBehaviour
+public class PlayerDigging : PlayerComponent
 {
-
-    public Player parent;
     void Update()
     {
         if (Input.GetButtonDown("Dig") && parent.backpack.GetActiveItem() == null)
         {
-            if (DiggingCoroutine==null && parent.movement.IsGrounded())
+            if (DiggingCoroutine==null && parent.IsGrounded())
             {
                 StartCoroutine(DiggingTask());
             }
@@ -23,23 +21,23 @@ public class PlayerDigging : MonoBehaviour
     float lastDigTime = 0;
     IEnumerator DiggingTask()
     {
-        parent.movement.CanMove = false;
+        parent.CanMove = false;
         while (Input.GetButton("Dig"))
         {
             DigDirection();
-            parent.movement.gravity.relativeForce = parent.stats.WalkSpeed * digVector * parent.stats.MoveSpeedMultiplier;
+            parent.gravity.relativeForce = parent.WalkSpeed * digVector * parent.MoveSpeedMultiplier;
             yield return new WaitForEndOfFrame();
         }
         StopDigging();
     }
     void DigDirection()
     {
-        digVector = parent.moveInput;
+        digVector = parent.input.moveInput;
         digVector = digVector.y * transform.up + digVector.x * transform.right;
         if (digVector.sqrMagnitude > 0 && lastDigTime < Time.time)
         {
-            lastDigTime = Time.time + parent.stats.GetDigTime();
-            new ExplosionData((Vector2)transform.position + digVector * parent.stats.DigRange, parent.stats.DigRadius, 0, 0, parent.stats.GetDigDamage(), 0).Explode();
+            lastDigTime = Time.time + parent.GetDigTime();
+            new ExplosionData((Vector2)transform.position + digVector * parent.DigRange, parent.DigRadius, 0, 0, parent.GetDigDamage(), 0).Explode();
             /*if (!parent.movement.IsGrounded())
             {
                 break;
@@ -51,7 +49,7 @@ public class PlayerDigging : MonoBehaviour
         if (DiggingCoroutine != null)
             StopCoroutine(DiggingCoroutine);
         DiggingCoroutine = null;
-        parent.movement.CanMove = true;
+        parent.CanMove = true;
     }
     private void OnDisable()
     {

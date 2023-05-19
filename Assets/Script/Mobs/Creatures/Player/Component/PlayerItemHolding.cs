@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(InventoryComponent))]
-public class PlayerItemHolding : MonoBehaviour
+public class PlayerItemHolding : PlayerComponent
 {
     public float PickUpRange = 1;
-    public Player parent;
     ItemMob WieldedTool;
     ItemMob HauledItem;
 
@@ -28,10 +27,10 @@ public class PlayerItemHolding : MonoBehaviour
                 ItemMob item = parent.backpack.GetActiveItem();
                 if (item != null)
                 {
-                    if (!item.RequiresGroundToUse || parent.movement.IsGrounded())
+                    if (!item.RequiresGroundToUse || parent.IsGrounded())
                     {
                         Debug.Log("[PlayerCarryItem] Try activate item " + item.name);
-                        item.OnActivate(parent.movement);
+                        item.OnActivate(parent);
                     }
                 }
             }

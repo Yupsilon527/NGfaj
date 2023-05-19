@@ -13,7 +13,7 @@ public class ResourcePowerUp : PowerupComponent
     }
     public ResType ResourceType ;
     public float ResourceAmount;
-    public override bool OnBuy(Player owningPlayer)
+    public override bool OnBuy(PlayerMob owningPlayer)
     {
         switch (ResourceType)
         {

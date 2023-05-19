@@ -5,9 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class PlayerMenu : MobComponent
+public class PlayerMenu : PlayerComponent
 {
-    public Player parent;
     public PlayerMenuController menuController;
     private void Start()
     {
@@ -74,7 +73,7 @@ public class PlayerMenu : MobComponent
 
         lNames.Add("Store Item");
         lActions.Add(() => {
-            if (parent.backpack.GetActiveItem()!= null && parent.movement.IsInside() && parent.backpack.GetActiveItem() != null && parent.movement.indoor.TryGetComponent(out InventoryComponent inventory))
+            if (parent.backpack.GetActiveItem()!= null && parent.IsInside() && parent.backpack.GetActiveItem() != null && parent.indoor.TryGetComponent(out InventoryComponent inventory))
             {
                 inventory.LoadItem(parent.backpack.GetActiveItem());
             }
@@ -82,7 +81,7 @@ public class PlayerMenu : MobComponent
         });
 
         lNames.Add("Exit");
-        lActions.Add(() => { parent.movement.ExitBuilding(); return true; });
+        lActions.Add(() => { parent.ExitBuilding(); return true; });
         menuController.OpenAtTarget(lNames.ToArray(), lActions.ToArray(), indoorHouse.transform);
     }
     public void OpenWithdrawMenu(InventoryComponent inventory)

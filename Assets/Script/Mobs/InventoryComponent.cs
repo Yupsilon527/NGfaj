@@ -111,7 +111,7 @@ public class InventoryComponent : MonoBehaviour
         }
     }
     public bool IsShop = false;
-    public void SellItem(Player sellingPlayer, ItemMob item)
+    public void SellItem(PlayerMob sellingPlayer, ItemMob item)
     {
         if (Inventory.Contains(item))
         {
