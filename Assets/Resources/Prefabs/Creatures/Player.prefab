@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437023634}
   - component: {fileID: 437023635}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 1907315463}
   - component: {fileID: 1907315464}
   - component: {fileID: 1907315465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,8 @@ GameObject:
   - component: {fileID: 907000933}
   - component: {fileID: 907000934}
   - component: {fileID: 8898064995416166015}
-  m_Layer: 0
+  - component: {fileID: 2575296838687920663}
+  m_Layer: 3
   m_Name: Mob
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -677,6 +678,7 @@ MonoBehaviour:
   FallDeceleration: 0.33
   MaxFallSpeed: 2
   MaxGlideSpeed: 1
+  health: {fileID: 0}
   movement: {fileID: 0}
   GroundTime: 0.1
   LastGroundTime: 0
@@ -696,7 +698,6 @@ MonoBehaviour:
   backpack: {fileID: 0}
   builder: {fileID: 0}
   menu: {fileID: 0}
-  health: {fileID: 0}
   resources: {fileID: 0}
   indoor: {fileID: 0}
 --- !u!114 &1217918130673713260
@@ -792,7 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   RegenerationPercent: 10
-  OxygenUpkeep: 3
+  OxygenUpkeep: 0.5
   OxygenDamage: 5
 --- !u!114 &9075029900562901718
 MonoBehaviour:
@@ -881,6 +882,22 @@ MonoBehaviour:
   moveInput: {x: 0, y: 0}
   fireInput: {x: 0, y: 0}
   miscInput: {x: 0, y: 0}
+--- !u!114 &2575296838687920663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217918130673713261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a700e2644fd53b4895ed98e897a8ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  WalkSpeed: 0
+  MaxFallSpeed: 0
+  FallDeceleration: 0
 --- !u!1 &1217918131570412961
 GameObject:
   m_ObjectHideFlags: 0

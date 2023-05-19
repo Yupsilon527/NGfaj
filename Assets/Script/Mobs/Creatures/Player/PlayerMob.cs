@@ -42,7 +42,6 @@ public class PlayerMob : CreatureMob
     public InventoryComponent backpack;
     public BuilderComponent builder;
     public PlayerMenu menu;
-    public HealthController health;
     public ResourceController resources;
    protected override void Awake()
     {
@@ -58,7 +57,6 @@ public class PlayerMob : CreatureMob
         builder = GetComponent<BuilderComponent>();
         menu = GetComponent<PlayerMenu>();
         farmer = GetComponentInParent<PlayerFarmingComponent>();
-        health = GetComponent<HealthController>();
         resources = GetComponent<ResourceController>();
 
     }

@@ -99,6 +99,7 @@ public class PlayerMenuController : MonoBehaviour
                     listle.GetComponentInChildren<TextMeshProUGUI>().text = Zim;
 
                     Button lBtn = listle.GetComponent<Button>();
+                    
                     if (ButtonAction != null)
                     {
                         lBtn.enabled = true;
@@ -112,6 +113,24 @@ public class PlayerMenuController : MonoBehaviour
                         lBtn.enabled = false;
                     }
                     rectHeight += posRect.height;
+                }
+            }
+
+            for (int i = 0; i < entries.Count; i++)
+            {
+                GameObject btnT = entries[i < 1 ? (entries.Count - 1) : 1];
+                GameObject btnM = entries[i];
+                GameObject btnC = entries[(i + 1) % entries.Count];
+
+                if (btnM.gameObject.TryGetComponent(out Button btnComp))
+                {
+                    Navigation navigation = new Navigation();
+
+                    navigation.mode = Navigation.Mode.Explicit;
+                    navigation.selectOnUp = btnT.GetComponent<Button>();
+                    navigation.selectOnDown = btnT.GetComponent<Button>();
+
+                    btnComp.navigation = navigation;
                 }
             }
             transform.position += rectHeight * .5f * Vector3.up;

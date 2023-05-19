@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CreatureMovement : CreatureComponent
 {
-    public float WalkSpeed = 0;
-    public float MaxFallSpeed = 0;
-    public float FallDeceleration = 0;
     protected void FixedUpdate()
     {
             HandleMovement();

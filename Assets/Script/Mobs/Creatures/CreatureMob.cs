@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent(typeof(CreatureMovement))]
+[RequireComponent(typeof(HealthController))]
 
 public class CreatureMob : Mob
 {
@@ -29,10 +31,12 @@ public class CreatureMob : Mob
         return JumpTime + JumpTimeUpgrade * JumpUpgrades;
     }
     #endregion
+    public HealthController health;
     public CreatureMovement movement;
     protected override void Awake()
     {
         base.Awake();
+        health = GetComponent<HealthController>();
         movement = GetComponent<CreatureMovement>();
     }
     #region Grounded
