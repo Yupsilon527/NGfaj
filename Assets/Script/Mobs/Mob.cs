@@ -92,7 +92,7 @@ public abstract class Mob : MonoBehaviour
     public virtual void Kill()
     {
         Debug.Log("[Mob] Kill " + name);
-        gameObject.SetActive(false);
+        WorldController.active.MobPool.DeactivateObject(gameObject);
     }
     public virtual bool WasKilled()
     {

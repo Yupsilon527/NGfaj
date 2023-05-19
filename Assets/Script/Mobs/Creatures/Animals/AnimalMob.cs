@@ -15,4 +15,9 @@ public class AnimalMob : CreatureMob
         hunger = GetComponent<AnimalHungerComponent>();
 
     }
+    public override void Register()
+    {
+        base.Register();
+        hunger.Hunger.SetPercentage(1);
+    }
 }

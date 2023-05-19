@@ -38,18 +38,21 @@ public class AnimalHungerComponent : AnimalComponent
                 if (diet.eatRequirement == food.ediblecategory)
                 {
                     Hunger.GiveValue(diet.hungerResult);
-                    PoopItem(diet.resultingItem);
+                    PoopItem(diet.resultingItem, diet.StackCount) ;
                     food.Kill();
+                    
                 }
             }
         }
     }
-    void PoopItem(GameObject item)
+    void PoopItem(GameObject item, int stackCount)
     {
         if (item != null)
         {
             GameObject poopObject = Instantiate(item);
             poopObject.transform.position = transform.position;
+            if (poopObject.TryGetComponent(out ChunkItem chunk))
+                chunk.SetQuantity(stackCount);
         }
     }
 }

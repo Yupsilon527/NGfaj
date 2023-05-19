@@ -227,11 +227,11 @@ MonoBehaviour:
   - eatRequirement: 2
     hungerResult: 20
     resultingItem: {fileID: 222666570693592656, guid: e02529076405410439c588c404b14c67, type: 3}
-    StackCount: 0
+    StackCount: 100
   - eatRequirement: 0
     hungerResult: 40
     resultingItem: {fileID: 222666570693592656, guid: 292942cc75ef9ba48a4ec8c070302a44, type: 3}
-    StackCount: 0
+    StackCount: 20
 --- !u!114 &1434695873138036306
 MonoBehaviour:
   m_ObjectHideFlags: 0

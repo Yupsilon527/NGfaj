@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &756386870760368247
+--- !u!1001 &8171126577960284210
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7659768135546024898, guid: 3f978ee508eef1f4a82e5395e54b1fde, type: 3}
       propertyPath: m_Name
-      value: Golden Apple
+      value: Gold Apple
       objectReference: {fileID: 0}
     - target: {fileID: 7659768135546024899, guid: 3f978ee508eef1f4a82e5395e54b1fde, type: 3}
       propertyPath: MobName
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7659768135546024899, guid: 3f978ee508eef1f4a82e5395e54b1fde, type: 3}
       propertyPath: GoldValue
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7659768135546024899, guid: 3f978ee508eef1f4a82e5395e54b1fde, type: 3}
       propertyPath: ediblecategory

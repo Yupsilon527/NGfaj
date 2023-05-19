@@ -84,7 +84,6 @@ public class PlayerMob : CreatureMob
         movement.HandleFall();
     }
 
-
     #region Enter Exit Building
     public CompartimentComponent indoor;
     public override bool IsInside()

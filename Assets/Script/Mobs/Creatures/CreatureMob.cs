@@ -85,4 +85,9 @@ public class CreatureMob : Mob
     {
         return (absolute ? Vector2.right : (Vector2)transform.right) * (FacesRight ? 1 : -1);
     }
+    public override void Register()
+    {
+        base.Register();
+        health.Health.SetPercentage(1);
+    }
 }

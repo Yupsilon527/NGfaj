@@ -94,16 +94,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 888556267524251566}
-  Shop:
-  - Item: {fileID: 836016670052375698, guid: 93d2c476dbcd3154f82cee16644c015b, type: 3}
-    Cost: 25
-  - Item: {fileID: 6365192511643780952, guid: 470975fcc3cb72d4c9eb59b39f168f7e, type: 3}
-    Cost: 5
-  - Item: {fileID: 5446169928913621129, guid: a7fca94b90dea1742831639aad66480d, type: 3}
-    Cost: 4
-  - Item: {fileID: 8233449647150354695, guid: 00a34070c3098874caf8f6b47348429f, type: 3}
-    Cost: 25
-  - Item: {fileID: 5838067984206625777, guid: 0996901a124c1914d83f93730bbcde63, type: 3}
-    Cost: 10
-  - Item: {fileID: 5838067984206625777, guid: 0c0e4a582a0a030498652a6c19b2daf2, type: 3}
-    Cost: 200
+  Shop: []

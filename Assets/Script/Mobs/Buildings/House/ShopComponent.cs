@@ -33,7 +33,7 @@ public class ShopComponent : MonoBehaviour
     {
         if (buyer.resources.ChargeValue(ResourceController.Resources.gold, item.Cost))
         {
-            GameObject realObject = Instantiate(item.Item);
+            GameObject realObject = WorldController.active.MobPool.PoolItem(item.Item);
             realObject.transform.position = transform.position;
 
             if (realObject.TryGetComponent(out ItemMob itemComp))
@@ -43,6 +43,11 @@ public class ShopComponent : MonoBehaviour
                 {
                     inventory.LoadItem(itemComp);
                 }
+            }
+
+            if (realObject.TryGetComponent(out ChunkItem chunkItem))
+            {
+                chunkItem.SetQuantity(100);
             }
 
             if (realObject.TryGetComponent(out PowerupComponent PowerUp) && PowerUp.OnBuy(buyer))

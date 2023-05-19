@@ -21,7 +21,7 @@ public class ResourceHarvestController : MonoBehaviour
             return;
 
         TerrainDefines.Element tileElement = tile.GetElement();
-        if (tileElement > TerrainDefines.Element.nothing)
+        if (tileElement > TerrainDefines.Element.dirt)
         {
             if ((tileElement != TerrainDefines.Element.dirt && tileElement != TerrainDefines.Element.rock) || Random.value * 100 < TerrainDefines.MatterLossChance)
                 MaterialsHarvested[(int)tileElement]++;

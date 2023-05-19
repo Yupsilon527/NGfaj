@@ -12,6 +12,11 @@ public class ExplosiveItem : ItemMob
     public float CreatureDamage = 1;
     public float KnockbackForce = 1;
     public float KnockbackRange = 1;
+    public override void OnCreate()
+    {
+        base.OnCreate();
+        StopDetonation();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.relativeVelocity.sqrMagnitude * collision.otherRigidbody.mass > DetonationForce)
@@ -38,7 +43,10 @@ public class ExplosiveItem : ItemMob
     public override void Kill()
     {
         base.Kill();
-        if (detonationCoroutine!=null)
+    }
+    void StopDetonation()
+    {
+        if (detonationCoroutine != null)
             StopCoroutine(detonationCoroutine);
         detonationCoroutine = null;
     }

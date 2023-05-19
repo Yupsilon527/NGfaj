@@ -74,11 +74,11 @@ public class PlayerMenu : PlayerComponent
                 lActions.Add(() => { OpenSellMenu(inventory); return false; });
             }
 
-            lNames.Add("Store");
+            lNames.Add("Inventory");
             lActions.Add(() => { OpenWithdrawMenu(inventory); return false; });
         }
 
-        lNames.Add("Store Item");
+        lNames.Add("Deposit Item");
         lActions.Add(() => {
             if (parent.backpack.GetActiveItem()!= null && parent.IsInside() && parent.backpack.GetActiveItem() != null && parent.indoor.TryGetComponent(out InventoryComponent inventory))
             {
