@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimalMob : CreatureMob
 {
-
+    
     public AnimalWanderComponent ai;
     public AnimalHungerComponent hunger;
     protected override void Awake()
@@ -19,5 +19,16 @@ public class AnimalMob : CreatureMob
     {
         base.Register();
         hunger.Hunger.SetPercentage(1);
+        RandomzieColor();
+    }
+    [Header("Colors")]
+    public SpriteRenderer sprite;
+    public Color[] possibleColors = new Color[0];
+    void RandomzieColor()
+    {
+        if (sprite!=null && possibleColors.Length>0)
+        {
+            sprite.color = possibleColors[Random.Range(0, possibleColors.Length)];
+        }
     }
 }

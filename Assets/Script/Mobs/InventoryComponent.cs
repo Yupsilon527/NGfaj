@@ -94,7 +94,7 @@ public class InventoryComponent : MonoBehaviour
             }
             if (!accounted)
             {
-                entries.Add(new InventoryEntry( i.name, 1));
+                entries.Add(new InventoryEntry( i.GetMobName(), 1));
             }
         }
         return entries.ToArray();
