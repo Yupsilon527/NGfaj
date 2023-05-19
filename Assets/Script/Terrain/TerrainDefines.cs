@@ -17,6 +17,7 @@ public static class TerrainDefines
         core = 5,
         total = 6,
     }
+    public static Color GrassColor = Color.green;
     public static Color[] ElementColors = new Color[]
     {
         Color.clear,

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[0].Cost
@@ -37,12 +37,12 @@ PrefabInstance:
       objectReference: {fileID: 8233449647150354695, guid: 00a34070c3098874caf8f6b47348429f, type: 3}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[3].Cost
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[3].Item
       value: 
-      objectReference: {fileID: 5838067984206625777, guid: 0c0e4a582a0a030498652a6c19b2daf2, type: 3}
+      objectReference: {fileID: 8233449647150354695, guid: 29f92c9614e6f3f4baa61c62c67a46f0, type: 3}
     - target: {fileID: 1967993311, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: Shop.Array.data[4].Cost
       value: 200
