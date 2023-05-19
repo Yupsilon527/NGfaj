@@ -10,7 +10,6 @@ public class PlayerMenuController : MonoBehaviour
     List<GameObject> entries;
 
     public delegate bool PlayerMenuAction();
-    public string[] Entries;
     RectTransform rectTransform;
 
     private void Awake()
@@ -36,13 +35,19 @@ public class PlayerMenuController : MonoBehaviour
     }
 
     float rectHeight = 0;
-    public void LoadEntries(string[] Names, PlayerMenuAction[] ButtonAction)
+
+    public string[] Names;
+    public PlayerMenuAction[] Actions;
+    public void LoadEntries(string[] names, PlayerMenuAction[] buttonAction)
     {
         ClearList();
+        Names = names;
         int nEntries = Names.Length;
-        if (ButtonAction != null)
+        if (buttonAction != null)
         {
-            Mathf.Min(Names.Length, ButtonAction.Length);
+            Actions = buttonAction;
+            nEntries = Mathf.Min(Names.Length, Actions.Length);
+        
         }
 
         if (nEntries > 0)
@@ -100,11 +105,11 @@ public class PlayerMenuController : MonoBehaviour
 
                     Button lBtn = listle.GetComponent<Button>();
                     
-                    if (ButtonAction != null)
+                    if (Actions != null)
                     {
                         lBtn.enabled = true;
                         lBtn.onClick.RemoveAllListeners();
-                        lBtn.onClick.AddListener(() => { if (ButtonAction[Value]()) { Close(); } });
+                        lBtn.onClick.AddListener(() => { if (Actions[Value]()) { Close(); } });
                         if (i == 0)
                             lBtn.Select();
                     }
@@ -116,7 +121,7 @@ public class PlayerMenuController : MonoBehaviour
                 }
             }
 
-            for (int i = 0; i < entries.Count; i++)
+            /*for (int i = 0; i < entries.Count; i++)
             {
                 GameObject btnT = entries[i < 1 ? (entries.Count - 1) : 1];
                 GameObject btnM = entries[i];
@@ -132,7 +137,7 @@ public class PlayerMenuController : MonoBehaviour
 
                     btnComp.navigation = navigation;
                 }
-            }
+            }*/
             transform.position += rectHeight * .5f * Vector3.up;
         }
         else { Close(); }
@@ -155,7 +160,7 @@ public class PlayerMenuController : MonoBehaviour
     public void RotateToPosition(Quaternion rotation)
     {
         transform.rotation = rotation;
-        transform.position += transform.up * Entries.Length * .5f * rectHeight;
+        //transform.position += transform.up * Names.Length * .5f * rectHeight;
     }
     public void Open()
     {

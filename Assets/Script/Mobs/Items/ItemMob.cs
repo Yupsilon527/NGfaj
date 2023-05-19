@@ -10,7 +10,15 @@ public class ItemMob : Mob
         tool,
         large
     }
+    public enum Edibility
+    {
+        fruit,
+        explosive,
+        gold,
+        inedible
+    }
     public Category category;
+    public Edibility ediblecategory;
     public InventoryComponent container;
     public bool RequiresGroundToUse = false;
     public float ThrowSpeed = 10;
@@ -22,7 +30,7 @@ public class ItemMob : Mob
     public virtual void OnActivate(PlayerMob user)
     {
         SetSuspended(false);
-        Vector2 throwVel = user.GetForwardVector(true) * ThrowSpeed + Vector2.up * ThrowSpeed;
+        Vector2 throwVel = user.GetForwardVector(true) * ThrowSpeed + Vector2.up * ThrowSpeed * user.ThrowStrength;
         if (container!=null)
         container.UnloadItem(this);
         rigidbody.velocity = throwVel.x* user.transform.right + throwVel.y * user.transform.up;
@@ -63,17 +71,17 @@ public class ItemMob : Mob
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.transform.TryGetComponent(out PlayerItemHolding player))
+        foreach (iItemToucher col in collision.transform.GetComponents<iItemToucher>())
         {
-            player.OnTouchItem(this);
+            col.OnTouchItem(this);
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.TryGetComponent(out PlayerItemHolding player))
+        foreach (iItemToucher col in collision.transform.GetComponents<iItemToucher>())
         {
-                player.OnTouchExit( this);
+            col.OnTouchExit( this);
             
         }
     }

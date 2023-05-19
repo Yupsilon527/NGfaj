@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(InventoryComponent))]
-public class PlayerItemHolding : PlayerComponent
+public class PlayerItemHolding : PlayerComponent, iItemToucher
 {
     public float PickUpRange = 1;
     ItemMob WieldedTool;

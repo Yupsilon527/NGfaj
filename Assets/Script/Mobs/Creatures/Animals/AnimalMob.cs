@@ -4,4 +4,15 @@ using UnityEngine;
 
 public class AnimalMob : CreatureMob
 {
+
+    public AnimalWanderComponent ai;
+    public AnimalHungerComponent hunger;
+    protected override void Awake()
+    {
+        base.Awake();
+
+        ai = GetComponent<AnimalWanderComponent>();
+        hunger = GetComponent<AnimalHungerComponent>();
+
+    }
 }

@@ -7,6 +7,7 @@ public class PlayerMob : CreatureMob
 {
     #region Digging
     [Header("Digging")]
+    public float ThrowStrength = .33f;
     public float DigRange = 3;
     public float DigRadius = 1;
     public float DigCooldown = 1;

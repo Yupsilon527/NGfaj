@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : PlayerComponent
 {
     void Update()
     {
@@ -17,10 +17,10 @@ public class PlayerInput : MonoBehaviour
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
 
-        /*fireInput.x = Input.GetAxis(command + " Horizontal Fire");
-        fireInput.y = Input.GetAxis(command + " Vertical Fire");
-
-        miscInput.x = Input.GetAxis(command + " Change Weapon");*/
+        if (Input.GetButtonDown("Cancel"))
+        {
+            parent.menu.ShutDownMenu();
+        }
     }
     public void CleanControls()
     {

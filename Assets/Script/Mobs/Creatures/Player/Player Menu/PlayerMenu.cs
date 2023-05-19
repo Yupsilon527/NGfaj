@@ -35,6 +35,13 @@ public class PlayerMenu : PlayerComponent
         lActions.Add(() => { return true; });
         menuController.OpenAtTarget(lNames.ToArray(), lActions.ToArray(), transform);
     }
+    public void ShutDownMenu()
+    {
+        if (menuController.isActiveAndEnabled)
+        {
+            menuController.Actions[menuController.Actions.Length - 1].Invoke();
+        }
+    }
     public void CloseMenu()
     {
         indoorHouse = null;
@@ -125,8 +132,8 @@ public class PlayerMenu : PlayerComponent
         {
             if (entry.Item.TryGetComponent(out Mob mobble))
                 lNames.Add(mobble.GetMobName() + " (" + entry.Cost + "g)");
-            else
-            lNames.Add(entry.Item.name + " ("+ entry.Cost + "g)");
+            else 
+                lNames.Add(entry.Item.name + " ("+ entry.Cost + "g)");
             lActions.Add(() => { if (store.CanPlayerBuyItem(parent,entry)) { store.BuyItemForPlayer(parent, entry); } return false; });
         }
 

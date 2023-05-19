@@ -87,14 +87,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dad045cfe41bb74aa07e92e487c8ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbody: {fileID: 0}
+  rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
   MobName: Seed
   category: 0
+  ediblecategory: 3
   container: {fileID: 0}
   RequiresGroundToUse: 0
   ThrowSpeed: 10
   GoldValue: 0
-  StartStuck: 0
+  StartSuspended: 0
   Plant: {fileID: 11400000, guid: 27ac0a7ffa5748c4eb209d487febfd79, type: 2}

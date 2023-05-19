@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a989fdf4f2f084d459b723b5092dd39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Entries: []
+  Names: []
 --- !u!1 &1218390428
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +683,7 @@ MonoBehaviour:
   GroundTime: 0.1
   LastGroundTime: 0
   BelowAngle: 75
+  ThrowStrength: 0.33
   DigRange: 0.15
   DigRadius: 0.5
   DigCooldown: 0.1
@@ -792,8 +793,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  MaxHealth: 100
   RegenerationPercent: 10
-  OxygenUpkeep: 0.5
+  OxygenRequired: 0
+  OxygenUpkeep: 0.15
   OxygenDamage: 5
 --- !u!114 &9075029900562901718
 MonoBehaviour:
@@ -879,6 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23005317e56f2d741813bc4db4d63076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   moveInput: {x: 0, y: 0}
   fireInput: {x: 0, y: 0}
   miscInput: {x: 0, y: 0}
@@ -895,9 +899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  WalkSpeed: 0
-  MaxFallSpeed: 0
-  FallDeceleration: 0
 --- !u!1 &1217918131570412961
 GameObject:
   m_ObjectHideFlags: 0
