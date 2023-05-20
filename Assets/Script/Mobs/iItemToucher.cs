@@ -9,11 +9,11 @@ public interface iItemToucher
 
 
     }
-    public void OnTouchStay(ItemMob item)
+/*    public void OnTouchStay(ItemMob item)
     {
 
 
-    }
+    }*/
     public void OnTouchExit(ItemMob item)
     {
 

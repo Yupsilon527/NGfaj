@@ -46,8 +46,8 @@ public class InterfaceController : MonoBehaviour
         else
             handTooltip.text = "";
 
-        if (myPlayer.hauler.TouchedItem != null)
-            itemTooltip.text = myPlayer.hauler.TouchedItem.GetMobName();
+        if (myPlayer.hauler.GetTouchedItem() != null)
+            itemTooltip.text = myPlayer.hauler.GetTouchedItem().GetMobName();
         else
             itemTooltip.text = "";
         if (helpTooltip != null)

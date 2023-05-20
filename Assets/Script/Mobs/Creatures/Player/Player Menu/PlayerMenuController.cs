@@ -18,6 +18,13 @@ public class PlayerMenuController : MonoBehaviour
 
         rectTransform = entries[0].GetComponent<RectTransform>();
     }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            ShutDownMenu();
+        }
+    }
     public void OpenAtPosition(string[] Names, PlayerMenuAction[] ButtonAction, Vector3 Position)
     {
         Open();
@@ -112,6 +119,8 @@ public class PlayerMenuController : MonoBehaviour
                         lBtn.onClick.AddListener(() => { if (Actions[Value]()) { Close(); } });
                         if (i == 0)
                             lBtn.Select();
+                        if (i == Names.Length - 1)
+                            closeButton = lBtn;
                     }
                     else
                     {
@@ -178,5 +187,13 @@ public class PlayerMenuController : MonoBehaviour
     {
         foreach (GameObject listle in entries)
         { listle.SetActive(false); }
+    }
+    Button closeButton;
+    public void ShutDownMenu()
+    {
+        if (closeButton != null)
+        {
+            closeButton.onClick.Invoke();
+        }
     }
 }

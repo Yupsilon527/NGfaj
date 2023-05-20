@@ -35,13 +35,6 @@ public class PlayerMenu : PlayerComponent
         lActions.Add(() => { return true; });
         menuController.OpenAtTarget(lNames.ToArray(), lActions.ToArray(), transform);
     }
-    public void ShutDownMenu()
-    {
-        if (menuController.isActiveAndEnabled)
-        {
-            menuController.Actions[menuController.Actions.Length - 1].Invoke();
-        }
-    }
     public void CloseMenu()
     {
         indoorHouse = null;

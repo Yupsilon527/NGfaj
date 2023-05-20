@@ -112,7 +112,7 @@ MonoBehaviour:
   Planet: {fileID: 0}
   MobName: 
   category: 0
-  ediblecategory: 0
+  ediblecategory: 3
   container: {fileID: 0}
   RequiresGroundToUse: 0
   ThrowSpeed: 10

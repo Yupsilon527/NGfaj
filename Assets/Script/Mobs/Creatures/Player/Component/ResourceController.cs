@@ -22,6 +22,7 @@ public class ResourceController : MobComponent
     {
         if (value != 0)
         {
+            //SFX if res equals gold, play money sound
             SetValue(res, GetResource(res) + value);
         }
     }

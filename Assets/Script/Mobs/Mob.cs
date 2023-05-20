@@ -25,6 +25,10 @@ public abstract class Mob : MonoBehaviour
             OrbitPoint(Vector3.zero);
     }
     protected bool suspended = false;
+    public bool IsSuspended()
+    {
+        return suspended;
+    }
     protected virtual void FixedUpdate()
     {
         if (Planet ==null)

@@ -16,11 +16,6 @@ public class PlayerInput : PlayerComponent
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetButtonDown("Cancel"))
-        {
-            parent.menu.ShutDownMenu();
-        }
     }
     public void CleanControls()
     {

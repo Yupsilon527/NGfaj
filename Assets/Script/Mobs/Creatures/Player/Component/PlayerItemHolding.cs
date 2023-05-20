@@ -52,32 +52,30 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
         }
     }
 
-    public ItemMob TouchedItem;
+    public List<ItemMob> TouchedItems = new List<ItemMob>();
     public void OnTouchEnter(ItemMob item)
     {
-        if (TouchedItem == null)
-        TouchedItem = item;
-
-    }
-    public void OnTouchStay(ItemMob item)
-    {
-        if (TouchedItem == null)
-            TouchedItem = item;
+        if (!TouchedItems.Contains(item))
+            TouchedItems.Add(item);
 
     }
     public void OnTouchExit(ItemMob item)
     {
-            if (TouchedItem == item)
-            {
-            TouchedItem = null;
-            }
-        
+        if (!TouchedItems.Contains(item))
+            TouchedItems.Remove(item);
+
+    }
+    public ItemMob GetTouchedItem()
+    {
+        if (TouchedItems.Count > 0)
+            return TouchedItems[0];
+        return null;
     }
     bool TryPickItem()
     {
         Debug.Log("[PlayerCarryItem] Try pick up items");
-        if (TouchedItem != null) 
-            return !PickUpItem(TouchedItem);
+        if (GetTouchedItem() != null) 
+            return !PickUpItem(GetTouchedItem());
 
         /*foreach (RaycastHit2D rch in Physics2D.CircleCastAll(transform.position,PickUpRange,Vector2.zero))
         {
