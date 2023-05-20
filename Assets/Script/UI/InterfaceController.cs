@@ -38,8 +38,8 @@ public class InterfaceController : MonoBehaviour
         healthGauge.text = "Health: " + Mathf.Ceil(myPlayer.health.Health.GetPercentage() * 100) + "%";
         oxygenGauge.text = "Oxygen: " + Mathf.Ceil(AtmosphereController.oxygen.GetPercentage() * 100) + "%";
 
-        goldGauge.text = "Gold: " + myPlayer.resources.GetResource(ResourceController.Resources.gold);
-        woodGauge.text = "Stone: " + myPlayer.resources.GetResource(ResourceController.Resources.wood);
+        goldGauge.text = "Gold: " + Mathf.Floor(myPlayer.resources.GetResource(ResourceController.Resources.gold));
+        woodGauge.text = "Stone: " + Mathf.Floor(myPlayer.resources.GetResource(ResourceController.Resources.wood));
 
         if (myPlayer.backpack.GetActiveItem() != null)
             handTooltip.text = myPlayer.backpack.GetActiveItem().GetMobName();

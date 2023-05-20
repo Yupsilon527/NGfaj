@@ -16,9 +16,9 @@ MonoBehaviour:
   PlantGrowthTime: 600
   PlantHunger: 0.75
   PlantHealth: 100
-  PlantAdultCycles: 300
+  PlantAdultCycles: 600
   OxygenProduction: 0.1
-  FruitChance: 6
+  FruitChance: 3
   FruitDropChance: 3
   FruitPrefab: {fileID: 1957195421440852976, guid: fbbbfdfc812a0ea449016a5d3baa5374, type: 3}
   SeedPrefab: {fileID: 5838067984206625777, guid: e5b47aac392df7a428f9c5f993af7d96, type: 3}

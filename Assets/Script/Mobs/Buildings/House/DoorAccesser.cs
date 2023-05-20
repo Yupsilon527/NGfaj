@@ -7,7 +7,7 @@ public class DoorAccesser : PlayerComponent
     public CompartimentComponent HouseInRange;
     private void Update()
     {
-        if (Input.GetButtonDown("Enter"))
+        if (Input.GetButtonDown("Build/Enter"))
         {
             if (parent.IsInside())
             {

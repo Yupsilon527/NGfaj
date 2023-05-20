@@ -19,7 +19,7 @@ public class BuilderComponent : PlayerComponent
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Build") && activeBuilding != null)
+        if (Input.GetButtonDown("Build/Enter") && activeBuilding != null)
             BuildBuilding(activeBuilding);
 
     }

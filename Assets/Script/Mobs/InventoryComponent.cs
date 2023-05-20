@@ -49,7 +49,7 @@ public class InventoryComponent : MonoBehaviour
     {
         foreach (ItemMob i in Inventory)
         {
-            if (i.MobName == itemName)
+            if (i.GetMobName() == itemName)
             {
                 return i;
             }
@@ -104,7 +104,7 @@ public class InventoryComponent : MonoBehaviour
         public string itemName;
         public int itemCount;
 
-        public InventoryEntry(string itemName, int itemCount)
+        public InventoryEntry(string itemName,  int itemCount)
         {
             this.itemName = itemName;
             this.itemCount = itemCount;
