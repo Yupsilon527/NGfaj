@@ -46,7 +46,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -174,16 +174,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef0fe9148c360045983b98ca11a1076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx: []
+  sfx:
+  - name: Door Open
+    clip: {fileID: 8300000, guid: a4ba0690ae7461449b4d526f8b12160a, type: 3}
+  - name: Door Close
+    clip: {fileID: 8300000, guid: a4ba0690ae7461449b4d526f8b12160a, type: 3}
+  - name: Pickup Item
+    clip: {fileID: 8300000, guid: 98c4ba67ae5ac0d42aaa42d5b8ea8cf1, type: 3}
+  - name: Drop Item
+    clip: {fileID: 8300000, guid: f7cafb14777f6dc4e9bdc19afd62c79b, type: 3}
+  - name: Dig
+    clip: {fileID: 8300000, guid: 129d2fe665085994c914811298883dde, type: 3}
+  - name: Collect Resource
+    clip: {fileID: 8300000, guid: a4ba0690ae7461449b4d526f8b12160a, type: 3}
+  - name: Buy
+    clip: {fileID: 8300000, guid: a4ba0690ae7461449b4d526f8b12160a, type: 3}
+  - name: Jump
+    clip: {fileID: 8300000, guid: cdb8b94a1c428a249ad76a330eb4f020, type: 3}
+  - name: Build
+    clip: {fileID: 8300000, guid: 803cd1c8c88bd874393c029d8ec0295f, type: 3}
   music:
   - name: Level Music
-    clip: {fileID: 8300000, guid: cd795f30f7f2ea7419286b19b2d89401, type: 3}
+    clip: {fileID: 8300000, guid: e28ba9240fc387c4aa59ab437ddbbd08, type: 3}
   sfxSource: {fileID: 8649876025308889971}
   musicSource: {fileID: 8649876023533841074}
   channel:
-  - {fileID: 24300002, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
-  - {fileID: -8570326475231769600, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
-  - {fileID: -1627647300276716105, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -4496535126652918301, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -8517306074171669740, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: 8922622830121009434, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -3739580783127033762, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: 3605581310434599674, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -1310448177174831465, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -8312878041227679020, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: 646573414075743323, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -6911625211714107857, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
 --- !u!1 &8649876025308889972
 GameObject:
   m_ObjectHideFlags: 0

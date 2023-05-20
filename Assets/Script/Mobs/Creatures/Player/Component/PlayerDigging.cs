@@ -12,6 +12,7 @@ public class PlayerDigging : PlayerComponent
             if (DiggingCoroutine==null && parent.IsGrounded())
             {
                 StartCoroutine(DiggingTask());
+                AudioManager.Instance.PlaySfx("Dig", 2);
             }
             
         }

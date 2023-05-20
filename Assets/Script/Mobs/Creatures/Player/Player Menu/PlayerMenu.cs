@@ -28,6 +28,7 @@ public class PlayerMenu : PlayerComponent
                     if (parent.builder.TryBuildBuilding(bPrefab, parent.movement.transform.position, transform.rotation.eulerAngles.z))
                     {
                         //SFX build a new building sound
+                        AudioManager.Instance.PlaySfx("Build", 7);
                         source.Kill();
                     }
                     return true;
@@ -113,6 +114,7 @@ public class PlayerMenu : PlayerComponent
             lNames.Add(item.itemName + " (" + item.itemCount + ")");
             lActions.Add(() => {
                 //SFX sold an item
+                AudioManager.Instance.PlaySfx("Sell", 9);
                 inventory.SellItem(parent, inventory.GetFirstItemByName(item.itemName)); 
                 OpenSellMenu(inventory); 
                 return false; 

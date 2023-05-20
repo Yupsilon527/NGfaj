@@ -93,7 +93,7 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
         {
             Debug.Log("[PlayerCarryItem] Pick up " + item.name);            
             return parent.backpack.LoadItem(item);
-            
+            AudioManager.Instance.PlaySfx("Pickup Item", 6);
         }
         return true;
     }
@@ -101,6 +101,7 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
     {
         Debug.Log("[PlayerCarryItem] Drop held item " + parent.backpack.name);
         parent.backpack.UnloadItem(parent.backpack.GetActiveItem());
-        
+        AudioManager.Instance.PlaySfx("Drop Item", 10);
+
     }
 }
