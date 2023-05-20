@@ -63,7 +63,6 @@ public class AnimalHungerComponent : AnimalComponent
             {
                 if (TryEatItem(food))
                 {
-                    //SFX Creature eats fruit
                     return;
                 }
             }
