@@ -30,14 +30,19 @@ public class DoorAccesser : PlayerComponent
     {
 
         //SFX Door sound
+       
+        
         parent.menu.OpenIndoorsMenu((HouseMob)HouseInRange.Owner);
         HouseInRange.LoadMob(parent);
+        AudioManager.Instance.PlaySfx("Door Open", 3);
     }
     void ExitHouse()
     {
 
         //SFX Door sound
+        AudioManager.Instance.PlaySfx("Door Close", 4);
         parent.menu.CloseMenu();
         parent.ExitBuilding();
+       
     }
 }

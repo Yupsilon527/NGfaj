@@ -93,6 +93,7 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
         {
             Debug.Log("[PlayerCarryItem] Pick up " + item.name);            
             return parent.backpack.LoadItem(item);
+            
         }
         return true;
     }
