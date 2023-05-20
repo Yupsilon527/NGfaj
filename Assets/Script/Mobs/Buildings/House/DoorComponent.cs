@@ -13,7 +13,7 @@ public class DoorComponent : MonoBehaviour
         if (House == null)
             House = GetComponentInParent<CompartimentComponent>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.transform.parent != null && collision.transform.parent.TryGetComponent(out DoorAccesser player))
         {

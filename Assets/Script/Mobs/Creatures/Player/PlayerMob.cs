@@ -72,9 +72,10 @@ public class PlayerMob : CreatureMob
             SidewaysCamera.active.FollowMob(this);
     }
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
+        if (!suspended)
             HandleMovement();
     }
     void HandleMovement()

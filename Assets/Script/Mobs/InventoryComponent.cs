@@ -34,6 +34,7 @@ public class InventoryComponent : MonoBehaviour
     }
     public void UnloadItemAtPosition(ItemMob item, Vector2 position)
     {
+        if (item == null) return;
         item.transform.position = position;
         if (Inventory.IndexOf(item) < ActiveItem)
             CycleItemLeft();

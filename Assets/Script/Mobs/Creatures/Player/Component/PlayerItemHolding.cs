@@ -53,11 +53,17 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
     }
 
     public ItemMob TouchedItem;
-    public void OnTouchItem(ItemMob item)
+    public void OnTouchEnter(ItemMob item)
     {
+        if (TouchedItem == null)
+        TouchedItem = item;
 
+    }
+    public void OnTouchStay(ItemMob item)
+    {
+        if (TouchedItem == null)
             TouchedItem = item;
-        
+
     }
     public void OnTouchExit(ItemMob item)
     {

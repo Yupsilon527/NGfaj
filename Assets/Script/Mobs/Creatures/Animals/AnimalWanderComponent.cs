@@ -29,10 +29,14 @@ public class AnimalWanderComponent : AnimalComponent, iItemToucher
         if (parent.CanMove)
             parent.movement.Move(WalkDir);
     }
-    public void OnTouchItem(ItemMob item)
+    public void OnTouchEnter(ItemMob item)
     {
 
-        parent.hunger.TryEatItem( item);
+
+    }
+    public void OnTouchStay(ItemMob item)
+    {
+        parent.hunger.TryEatItem(item);
 
     }
     public void OnTouchExit(ItemMob item)

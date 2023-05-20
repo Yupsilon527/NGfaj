@@ -74,7 +74,15 @@ public class ItemMob : Mob
     {
         foreach (iItemToucher col in collision.transform.GetComponents<iItemToucher>())
         {
-            col.OnTouchItem(this);
+            col.OnTouchEnter(this);
+
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        foreach (iItemToucher col in collision.transform.GetComponents<iItemToucher>())
+        {
+            col.OnTouchStay(this);
 
         }
     }
@@ -89,6 +97,7 @@ public class ItemMob : Mob
     public bool StartSuspended = false;
 public void SetSuspended(bool value)
     {
+        suspended = value;
         rigidbody.bodyType = value ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
     }
     public bool IsSuspended()

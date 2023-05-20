@@ -24,13 +24,14 @@ public abstract class Mob : MonoBehaviour
     {
             OrbitPoint(Vector3.zero);
     }
-    protected virtual void Update()
+    protected bool suspended = false;
+    protected virtual void FixedUpdate()
     {
         if (Planet ==null)
         {
             TieToPlanet(PlanetoidController.mainPlanet);
         }
-        else
+        else if (!suspended)
         {
             HandleOrbit();
         }
