@@ -49,7 +49,7 @@ public class InventoryComponent : MonoBehaviour
     {
         foreach (ItemMob i in Inventory)
         {
-            if (i.name == itemName)
+            if (i.MobName == itemName)
             {
                 return i;
             }

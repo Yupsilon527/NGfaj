@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &437023634
 Transform:
   m_ObjectHideFlags: 0
@@ -593,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 1217918130673713261}
   m_LocalRotation: {x: -0, y: -0, z: -0.1633241, w: 0.9865725}
   m_LocalPosition: {x: 6.06, y: 11.71, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 437023634}
@@ -642,7 +642,7 @@ SpriteRenderer:
   m_SortingLayerID: -980121073
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57715c2cfe259c94199a6b6731a82922, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -669,6 +669,7 @@ MonoBehaviour:
   gravity: {fileID: 0}
   Planet: {fileID: 0}
   MobName: Player
+  renderer: {fileID: 1217918130673713262}
   CanMove: 1
   WalkSpeed: 20
   JumpTime: 0.33
@@ -677,7 +678,7 @@ MonoBehaviour:
   JumpTimeUpgrade: 0.5
   JumpUpgradesMax: 10
   FallDeceleration: 0.33
-  MaxFallSpeed: 2
+  MaxFallSpeed: 4
   MaxGlideSpeed: 1
   health: {fileID: 0}
   movement: {fileID: 0}

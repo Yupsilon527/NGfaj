@@ -22,13 +22,12 @@ public class AnimalMob : CreatureMob
         RandomzieColor();
     }
     [Header("Colors")]
-    public SpriteRenderer sprite;
     public Color[] possibleColors = new Color[0];
     void RandomzieColor()
     {
-        if (sprite!=null && possibleColors.Length>0)
+        if (renderer!=null && possibleColors.Length>0)
         {
-            sprite.color = possibleColors[Random.Range(0, possibleColors.Length)];
+            renderer.color = possibleColors[Random.Range(0, possibleColors.Length)];
         }
     }
 }

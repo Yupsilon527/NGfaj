@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CreatureMob : Mob
 {
+    public SpriteRenderer renderer;
     public bool CanMove = true;
 
     public float WalkSpeed = 10;
@@ -79,7 +80,10 @@ public class CreatureMob : Mob
     public void SetFacing(bool right)
     {
         FacesRight = right;
-        //transform.localScale = new Vector3(right ? transform.localScale.x : -transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        if (renderer!=null)
+        {
+            renderer.flipX = !FacesRight;
+        }
     }
     public override Vector2 GetForwardVector(bool absolute)
     {
