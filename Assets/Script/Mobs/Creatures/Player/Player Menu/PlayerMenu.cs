@@ -26,7 +26,10 @@ public class PlayerMenu : PlayerComponent
                 lActions.Add(() =>
                 {
                     if (parent.builder.TryBuildBuilding(bPrefab, parent.movement.transform.position, transform.rotation.eulerAngles.z))
+                    {
+                        //SFX build a new building sound
                         source.Kill();
+                    }
                     return true;
                 });
             }
@@ -108,7 +111,12 @@ public class PlayerMenu : PlayerComponent
         foreach (InventoryComponent.InventoryEntry item in inventory.GetInventoryList())
         {
             lNames.Add(item.itemName + " (" + item.itemCount + ")");
-            lActions.Add(() => { inventory.SellItem(parent, inventory.GetFirstItemByName(item.itemName)); OpenSellMenu(inventory); return false; });
+            lActions.Add(() => {
+                //SFX sold an item
+                inventory.SellItem(parent, inventory.GetFirstItemByName(item.itemName)); 
+                OpenSellMenu(inventory); 
+                return false; 
+            });
         }
 
 

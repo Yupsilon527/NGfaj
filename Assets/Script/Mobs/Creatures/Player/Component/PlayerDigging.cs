@@ -24,22 +24,26 @@ public class PlayerDigging : PlayerComponent
         parent.CanMove = false;
         while (Input.GetButton("Dig"))
         {
+            digVector = parent.input.moveInput;
+            MoveDigDirection();
             DigDirection();
-            parent.gravity.relativeForce = parent.WalkSpeed * digVector * parent.MoveSpeedMultiplier;
             yield return new WaitForEndOfFrame();
         }
         StopDigging();
     }
     void DigDirection()
     {
-        digVector = parent.input.moveInput;
         digVector = digVector.y * transform.up + digVector.x * transform.right;
         if (digVector.sqrMagnitude > 0 && lastDigTime < Time.time)
         {
+            //SFX player digs 
             lastDigTime = Time.time + parent.GetDigTime();
-            new ExplosionData((Vector2)transform.position + digVector * parent.DigRange, parent.DigRadius, 0, 0, parent.GetDigDamage(), 0).Explode();
-            
+            new ExplosionData((Vector2)transform.position + digVector * parent.DigRange, parent.DigRadius, 0, 0, parent.GetDigDamage(), 0).Explode();            
         }
+    }
+    void MoveDigDirection()
+    {
+        parent.gravity.relativeForce = parent.WalkSpeed * digVector * parent.MoveSpeedMultiplier;
     }
     public void StopDigging()
     {

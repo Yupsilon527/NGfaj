@@ -24,6 +24,8 @@ public class HealthController : CreatureComponent
     {
         if (Health.GetPercentage() <= 0)
         {
+
+            //SFX game over sound
             parent.Kill();
         }
     }

@@ -126,7 +126,10 @@ public abstract class Mob : MonoBehaviour
     protected void OrbitPoint(Vector3 point)
     {
         Vector2 vectorUp = (transform.position - point);
+       
+        if (Mathf.Abs(vectorUp.x) > .05f)
         transform.up = vectorUp;
+       
     }
     public string MobName = "";
     public virtual string GetMobName()

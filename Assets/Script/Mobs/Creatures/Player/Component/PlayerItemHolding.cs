@@ -61,7 +61,7 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
     }
     public void OnTouchExit(ItemMob item)
     {
-        if (!TouchedItems.Contains(item))
+        if (TouchedItems.Contains(item))
             TouchedItems.Remove(item);
 
     }

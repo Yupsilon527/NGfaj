@@ -36,6 +36,7 @@ public class ExplosiveItem : ItemMob
     }
     void Explode()
     {
+        //SFX explosion audio
         Kill();
         ExplosionData boom = new ExplosionData((Vector2)transform.position + rigidbody.velocity, ExplosionRadius[0], ExplosionRadius[1], ExplosionRadius[2], KnockbackForce, KnockbackRange, ExplosionDamage[0], ExplosionDamage[1], ExplosionDamage[2], CreatureDamage);
         boom.Explode();

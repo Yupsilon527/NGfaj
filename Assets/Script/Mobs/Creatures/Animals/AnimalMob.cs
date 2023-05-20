@@ -17,6 +17,7 @@ public class AnimalMob : CreatureMob
     }
     public override void Register()
     {
+        //SFX creature comes out of the house
         base.Register();
         hunger.Hunger.SetPercentage(1);
         RandomzieColor();

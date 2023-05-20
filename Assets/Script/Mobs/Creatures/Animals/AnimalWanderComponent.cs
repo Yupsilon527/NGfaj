@@ -10,6 +10,7 @@ public class AnimalWanderComponent : AnimalComponent, iItemToucher
 
     void Update()
     {
+        //SFX maybe creature noise
         if (LastWalk < Time.time)
         {
             LastWalk = Time.time + UpdateTime;

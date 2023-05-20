@@ -33,6 +33,7 @@ public class PlayerReset : PlayerComponent
     }
     void ResetPlayer()
     {
+        //SFX teleport sound
         parent.hauler.DropItem();
         transform.position = homePosition;
         ResetTime = 0;

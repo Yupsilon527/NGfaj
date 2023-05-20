@@ -53,6 +53,8 @@ public class BuildingMob : Mob
             BuildingTexture.size = new Vector2(1, percent*.01f);
         }
         buildPercentage = Mathf.Clamp(percent, 0, 100);
+
+        //SFX building complete sound, only if the buildPercentage is at 100
     }
     public float GetBuildingPercentage()
 

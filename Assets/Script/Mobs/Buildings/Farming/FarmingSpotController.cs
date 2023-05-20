@@ -43,6 +43,7 @@ public class FarmingSpotController : MonoBehaviour
     {
         if (Nutriment.GetValue()< Nutriment.GetLimit(false) &&  item.GetNutritionalValue()>0)
         {
+            //SFX feeding nutriment to plant
             ChunkItem chunk = (ChunkItem)item;
             if (chunk != null)
             {
@@ -91,6 +92,8 @@ public class FarmingSpotController : MonoBehaviour
     }
     void GiveNewPlant(PlantData plant)
     {
+
+        //SFX new plant planted
         currentPlant = plant;
         PlantGrowth.SetLimit(currentPlant.PlantGrowthTime, Resource.LimitRule.empty_value);
         PlantHealth.SetLimit(currentPlant.PlantHealth, Resource.LimitRule.fullheal_value);

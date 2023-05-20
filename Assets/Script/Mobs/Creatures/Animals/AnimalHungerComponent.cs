@@ -15,6 +15,8 @@ public class AnimalHungerComponent : AnimalComponent
     {
         HandleMetabolism();
         TryEat();
+
+        //SFX Maybe creature noise?
     }
     void HandleMetabolism()
     {
@@ -60,7 +62,10 @@ public class AnimalHungerComponent : AnimalComponent
             foreach (ItemMob food in TouchedItems)
             {
                 if (TryEatItem(food))
+                {
+                    //SFX Creature eats fruit
                     return;
+                }
             }
         }
     }

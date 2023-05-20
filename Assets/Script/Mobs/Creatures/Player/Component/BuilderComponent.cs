@@ -52,6 +52,7 @@ public class BuilderComponent : PlayerComponent
             GameObject deploy = bmob.BuildCopy(buildPos, 15f);
                 if (deploy.TryGetComponent(out BuildingMob buildingmobdata))
                     BuildBuilding(buildingmobdata);
+            //SFX player builds/places a new building
         }
         return true;
     }
@@ -60,6 +61,7 @@ public class BuilderComponent : PlayerComponent
         parent.CanMove = false;
         float buildPercent = (building.BuildTime > 0) ? (BuildingSkill * 10 * Time.deltaTime / building.BuildTime) : 100;
 
+    //SFX turn on building looping sound
     loopstart:
         yield return new WaitForEndOfFrame();
         buildPercent = Mathf.Min(buildPercent, 100 - building.GetBuildingPercentage());
@@ -73,11 +75,13 @@ public class BuilderComponent : PlayerComponent
         }
         else
         {
+
             StopBuilding();
         }
     }
     void StopBuilding()
     {
+        //SFX stop building looping sound
         parent.CanMove = true;
         buildCoroutine = null;
     }

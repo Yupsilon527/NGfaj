@@ -17,7 +17,9 @@ public class HouseMob : BuildingMob
     public override void SetBuildPercentage(float percent)
     {
         base.SetBuildPercentage(percent);
-        if (indoors!=null && indoors.entryDoor!=null)
-        indoors.entryDoor.gameObject.SetActive(percent >= 100);
+        if (indoors != null && indoors.entryDoor != null)
+        {
+            indoors.entryDoor.gameObject.SetActive(percent >= 100);
+        }
     }
 }

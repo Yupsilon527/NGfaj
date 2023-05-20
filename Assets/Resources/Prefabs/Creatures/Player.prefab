@@ -687,8 +687,8 @@ MonoBehaviour:
   LastGroundTime: 0
   BelowAngle: 75
   ThrowStrength: 0.15
-  DigRange: 0.25
-  DigRadius: 0.4
+  DigRange: 0.15
+  DigRadius: 0.36
   DigCooldown: 0.1
   DigCooldownUpgrades: 0.1
   MoveSpeedMultiplier: 1.2
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   PickUpRange: 1
-  TouchedItem: {fileID: 0}
+  TouchedItems: []
 --- !u!114 &907000934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18de24ed8b2c2ac4ca427a2720186037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  homePosition: {x: 4.5618973, y: 13.400649, z: 0}
 --- !u!1 &1217918131570412961
 GameObject:
   m_ObjectHideFlags: 0

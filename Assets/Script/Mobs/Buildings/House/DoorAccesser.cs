@@ -28,11 +28,15 @@ public class DoorAccesser : PlayerComponent
     }
     void EnterHouse()
     {
+
+        //SFX Door sound
         parent.menu.OpenIndoorsMenu((HouseMob)HouseInRange.Owner);
         HouseInRange.LoadMob(parent);
     }
     void ExitHouse()
     {
+
+        //SFX Door sound
         parent.menu.CloseMenu();
         parent.ExitBuilding();
     }

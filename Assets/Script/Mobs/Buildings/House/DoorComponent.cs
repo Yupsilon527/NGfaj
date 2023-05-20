@@ -33,5 +33,7 @@ public class DoorComponent : MonoBehaviour
     public virtual void OnUsed()
     {
         animator.CrossFade("DoorOpen", .5f);
+
+        //SFX Door sound
     }
 }

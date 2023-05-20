@@ -54,6 +54,8 @@ public class ShopComponent : MonoBehaviour
             {
                 realObject.SetActive(false);
             }
-            }
+
+            //SFX play sound when buying an item
+        }
     }
 }
