@@ -193,6 +193,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: cdb8b94a1c428a249ad76a330eb4f020, type: 3}
   - name: Build
     clip: {fileID: 8300000, guid: 803cd1c8c88bd874393c029d8ec0295f, type: 3}
+  - name: Sell
+    clip: {fileID: 8300000, guid: b3f4bb5694963ea49ad97ce5d36cd7a7, type: 3}
+  - name: Construction
+    clip: {fileID: 8300000, guid: e54ba1925faf98547928f76218c911f3, type: 3}
+  - name: Place Building
+    clip: {fileID: 8300000, guid: 3185d38cf5d3bd84f943827bf25379b3, type: 3}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: ad47a7fbb39d96d45abcc04388db7819, type: 3}
+  - name: Farm Sounds
+    clip: {fileID: 8300000, guid: 65052792616441a40aca32718388e277, type: 3}
   music:
   - name: Level Music
     clip: {fileID: 8300000, guid: e28ba9240fc387c4aa59ab437ddbbd08, type: 3}
@@ -208,6 +218,12 @@ MonoBehaviour:
   - {fileID: -8312878041227679020, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
   - {fileID: 646573414075743323, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
   - {fileID: -6911625211714107857, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -6400154578739428101, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: 1785863713023428402, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: 454017755321434001, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: -3753951683722048737, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: 1365496161780342664, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
+  - {fileID: 1781898998655100883, guid: a70b4255fa00b484ba78ce2b888426b3, type: 2}
 --- !u!1 &8649876025308889972
 GameObject:
   m_ObjectHideFlags: 0
