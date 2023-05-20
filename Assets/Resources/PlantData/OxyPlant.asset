@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad9e519b4576c74888a1b4afc7296d5, type: 3}
   m_Name: OxyPlant
   m_EditorClassIdentifier: 
-  PlantName: Oxygen Plant
-  PlantGrowthTime: 600
-  PlantHunger: 0.75
+  PlantName: Evergreen
+  PlantGrowthTime: 400
+  PlantHunger: 0.5
   PlantHealth: 120
   PlantAdultCycles: 33
   OxygenProduction: 0.25
   FruitChance: 0
+  FruitDropChance: 15
   FruitPrefab: {fileID: 0}
   SeedPrefab: {fileID: 5838067984206625777, guid: 0996901a124c1914d83f93730bbcde63, type: 3}
   SeedCount: 3

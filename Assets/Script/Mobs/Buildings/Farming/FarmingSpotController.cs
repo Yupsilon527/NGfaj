@@ -227,7 +227,7 @@ void     ProduceFruit()
         {
             return fruit.container != null && fruit.IsSuspended();
         });
-        if (Fruits.Count > 0 && Random.value * 100 < 15)
+        if (Fruits.Count > 0 && Random.value * 100 < currentPlant.FruitDropChance)
         {
             int iF = Mathf.RoundToInt(Random.Range(0, Fruits.Count - 1));
             Fruits[iF].SetSuspended(false);

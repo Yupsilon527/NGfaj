@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437023634}
   - component: {fileID: 437023635}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a989fdf4f2f084d459b723b5092dd39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Entries: []
+  Names: []
 --- !u!1 &1218390428
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,13 +467,13 @@ GameObject:
   - component: {fileID: 1907315463}
   - component: {fileID: 1907315464}
   - component: {fileID: 1907315465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1907315463
 Transform:
   m_ObjectHideFlags: 0
@@ -574,8 +574,9 @@ GameObject:
   - component: {fileID: 570360273}
   - component: {fileID: 907000933}
   - component: {fileID: 907000934}
-  - component: {fileID: 8377852523907486850}
-  m_Layer: 0
+  - component: {fileID: 8898064995416166015}
+  - component: {fileID: 2575296838687920663}
+  m_Layer: 3
   m_Name: Mob
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -663,13 +664,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3d938e66349f240b5db7e79f9c0fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbody: {fileID: 0}
+  rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
   MobName: Player
   CanMove: 1
+  WalkSpeed: 20
+  JumpTime: 0.33
+  MaxJumpSpeed: 20
+  JumpSpeed: 20
+  JumpTimeUpgrade: 0.5
+  JumpUpgradesMax: 10
+  FallDeceleration: 0.33
+  MaxFallSpeed: 2
+  MaxGlideSpeed: 1
+  health: {fileID: 0}
+  movement: {fileID: 0}
   GroundTime: 0.1
+  LastGroundTime: 0
   BelowAngle: 75
+  ThrowStrength: 0.15
+  DigRange: 0.25
+  DigRadius: 0.4
+  DigCooldown: 0.1
+  DigCooldownUpgrades: 0.1
+  MoveSpeedMultiplier: 1.2
+  DigStrengthUpgrades: 1
+  collider: {fileID: 0}
+  digging: {fileID: 0}
+  input: {fileID: 0}
+  farmer: {fileID: 0}
+  accesser: {fileID: 0}
+  hauler: {fileID: 0}
+  backpack: {fileID: 0}
+  builder: {fileID: 0}
+  menu: {fileID: 0}
+  resources: {fileID: 0}
   indoor: {fileID: 0}
 --- !u!114 &1217918130673713260
 MonoBehaviour:
@@ -683,6 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600e9907e3fcccc4bbf89b8236f95ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
 --- !u!50 &1217918130673713267
 Rigidbody2D:
   serializedVersion: 4
@@ -732,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91371f216959e54bbbf4b4417f23389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
+  parent: {fileID: 0}
   activeBuilding: {fileID: 0}
   BuildingSkill: 10
 --- !u!114 &2143083556
@@ -747,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f56b977f9108b6438e173b6816021b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 1217918130673713263}
+  parent: {fileID: 0}
   menuController: {fileID: 1060280711}
 --- !u!114 &5226539002580152131
 MonoBehaviour:
@@ -761,8 +792,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34fbe94f4fbc8d4fb2f48bd0669062a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
+  parent: {fileID: 0}
+  MaxHealth: 100
   RegenerationPercent: 10
+  OxygenRequired: 0
+  OxygenUpkeep: 0.15
   OxygenDamage: 5
 --- !u!114 &9075029900562901718
 MonoBehaviour:
@@ -776,10 +810,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd881f51df53884cae7bd9fc72e4353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
+  parent: {fileID: 0}
   storage:
+  - 250
   - 100
-  - 110
 --- !u!247 &3946223513248005029
 ConstantForce2D:
   m_ObjectHideFlags: 0
@@ -803,6 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bacadd9c1fd4c428a2234d1925c386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   FarmingSpot: {fileID: 0}
 --- !u!114 &907000933
 MonoBehaviour:
@@ -816,6 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1b18ab6fb046f4b9a92b132ea5c6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   PickUpRange: 1
   TouchedItem: {fileID: 0}
 --- !u!114 &907000934
@@ -834,7 +870,7 @@ MonoBehaviour:
   Owner: {fileID: 0}
   Inventory: []
   IsShop: 0
---- !u!114 &8377852523907486850
+--- !u!114 &8898064995416166015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -843,22 +879,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217918130673713261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac463889b2df8994d9b07c3474552a5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 23005317e56f2d741813bc4db4d63076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 20
-  JumpTime: 0.33
-  MaxJumpSpeed: 20
-  JumpSpeed: 20
-  JumpTimeUpgrade: 0.5
-  JumpUpgradesMax: 0
-  FallDeceleration: 0.33
-  MaxFallSpeed: 2
-  MaxGlideSpeed: 1
-  DigRange: 0.15
-  DigRadius: 0.5
-  DigCooldown: 0.1
-  MoveSpeedMultiplier: 1.4
+  parent: {fileID: 0}
+  moveInput: {x: 0, y: 0}
+  fireInput: {x: 0, y: 0}
+  miscInput: {x: 0, y: 0}
+--- !u!114 &2575296838687920663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217918130673713261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a700e2644fd53b4895ed98e897a8ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
 --- !u!1 &1217918131570412961
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,4 +945,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d637e5b2a0f0d4eb2943bc37ed59d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 1217918130673713263}
   HouseInRange: {fileID: 0}

@@ -5,9 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class PlayerMenu : MobComponent
+public class PlayerMenu : PlayerComponent
 {
-    public Player parent;
     public PlayerMenuController menuController;
     private void Start()
     {
@@ -35,6 +34,13 @@ public class PlayerMenu : MobComponent
         lNames.Add("Close");
         lActions.Add(() => { return true; });
         menuController.OpenAtTarget(lNames.ToArray(), lActions.ToArray(), transform);
+    }
+    public void ShutDownMenu()
+    {
+        if (menuController.isActiveAndEnabled)
+        {
+            menuController.Actions[menuController.Actions.Length - 1].Invoke();
+        }
     }
     public void CloseMenu()
     {
@@ -68,13 +74,13 @@ public class PlayerMenu : MobComponent
                 lActions.Add(() => { OpenSellMenu(inventory); return false; });
             }
 
-            lNames.Add("Store");
+            lNames.Add("Inventory");
             lActions.Add(() => { OpenWithdrawMenu(inventory); return false; });
         }
 
-        lNames.Add("Store Item");
+        lNames.Add("Deposit Item");
         lActions.Add(() => {
-            if (parent.backpack.GetActiveItem()!= null && parent.movement.IsInside() && parent.backpack.GetActiveItem() != null && parent.movement.indoor.TryGetComponent(out InventoryComponent inventory))
+            if (parent.backpack.GetActiveItem()!= null && parent.IsInside() && parent.backpack.GetActiveItem() != null && parent.indoor.TryGetComponent(out InventoryComponent inventory))
             {
                 inventory.LoadItem(parent.backpack.GetActiveItem());
             }
@@ -82,7 +88,7 @@ public class PlayerMenu : MobComponent
         });
 
         lNames.Add("Exit");
-        lActions.Add(() => { parent.movement.ExitBuilding(); return true; });
+        lActions.Add(() => { parent.ExitBuilding(); return true; });
         menuController.OpenAtTarget(lNames.ToArray(), lActions.ToArray(), indoorHouse.transform);
     }
     public void OpenWithdrawMenu(InventoryComponent inventory)
@@ -126,8 +132,8 @@ public class PlayerMenu : MobComponent
         {
             if (entry.Item.TryGetComponent(out Mob mobble))
                 lNames.Add(mobble.GetMobName() + " (" + entry.Cost + "g)");
-            else
-            lNames.Add(entry.Item.name + " ("+ entry.Cost + "g)");
+            else 
+                lNames.Add(entry.Item.name + " ("+ entry.Cost + "g)");
             lActions.Add(() => { if (store.CanPlayerBuyItem(parent,entry)) { store.BuyItemForPlayer(parent, entry); } return false; });
         }
 

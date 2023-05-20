@@ -87,16 +87,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798c5182bdc9464497241f2881a6fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbody: {fileID: 0}
+  rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
   MobName: Explosive
   category: 0
+  ediblecategory: 3
   container: {fileID: 0}
   RequiresGroundToUse: 0
   ThrowSpeed: 6
   GoldValue: 0
-  StartStuck: 0
+  StartSuspended: 0
   DetonationForce: 10
   DetonationDuration: 0
   ExplosionRadius:
@@ -104,6 +105,6 @@ MonoBehaviour:
   - 1.4
   - 0.8
   ExplosionDamage: 000000000300000002000000
-  CreatureDamage: 0
+  CreatureDamage: 25
   KnockbackForce: 100
   KnockbackRange: 1.6

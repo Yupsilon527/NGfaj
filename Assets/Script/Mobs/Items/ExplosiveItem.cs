@@ -12,6 +12,11 @@ public class ExplosiveItem : ItemMob
     public float CreatureDamage = 1;
     public float KnockbackForce = 1;
     public float KnockbackRange = 1;
+    public override void OnCreate()
+    {
+        base.OnCreate();
+        StopDetonation();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.relativeVelocity.sqrMagnitude * collision.otherRigidbody.mass > DetonationForce)
@@ -32,13 +37,16 @@ public class ExplosiveItem : ItemMob
     void Explode()
     {
         Kill();
-        ExplosionData boom = new ExplosionData((Vector2)transform.position + rbody.velocity, ExplosionRadius[0], ExplosionRadius[1], ExplosionRadius[2], KnockbackForce, KnockbackRange, ExplosionDamage[0], ExplosionDamage[1], ExplosionDamage[2], CreatureDamage);
+        ExplosionData boom = new ExplosionData((Vector2)transform.position + rigidbody.velocity, ExplosionRadius[0], ExplosionRadius[1], ExplosionRadius[2], KnockbackForce, KnockbackRange, ExplosionDamage[0], ExplosionDamage[1], ExplosionDamage[2], CreatureDamage);
         boom.Explode();
     }
     public override void Kill()
     {
         base.Kill();
-        if (detonationCoroutine!=null)
+    }
+    void StopDetonation()
+    {
+        if (detonationCoroutine != null)
             StopCoroutine(detonationCoroutine);
         detonationCoroutine = null;
     }

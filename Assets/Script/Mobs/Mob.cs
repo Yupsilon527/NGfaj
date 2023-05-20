@@ -8,11 +8,11 @@ using UnityEngine;
 public abstract class Mob : MonoBehaviour
 {
     protected int eid = 0;
-    public Rigidbody2D rbody;
+    public Rigidbody2D rigidbody;
     protected virtual void Awake()
     {
-        if (rbody == null)
-            rbody = GetComponent<Rigidbody2D>();
+        if (rigidbody == null)
+            rigidbody = GetComponent<Rigidbody2D>();
         if (gravity == null)
             gravity = GetComponent<ConstantForce2D>();
     }
@@ -46,7 +46,7 @@ public abstract class Mob : MonoBehaviour
     }
     public virtual bool IsInMotion()
     {
-        return gameObject.activeInHierarchy && rbody.IsAwake();
+        return gameObject.activeInHierarchy && rigidbody.IsAwake();
     }
     public  void HandleShockwave(ExplosionData eData)
     {
@@ -79,7 +79,7 @@ public abstract class Mob : MonoBehaviour
     public virtual void ApplyForce(Vector2 force, Vector2 center)
     {
         // rigidbody.AddForceAtPosition(force, center);
-        rbody.AddForce (force);
+        rigidbody.AddForce (force);
         WorldController.active.MobsInMotion.Add(this);
         Debug.Log("[Mob] Apply " + force + " force to " + name + " at point " + center);
        
@@ -92,7 +92,7 @@ public abstract class Mob : MonoBehaviour
     public virtual void Kill()
     {
         Debug.Log("[Mob] Kill " + name);
-        gameObject.SetActive(false);
+        WorldController.active.MobPool.DeactivateObject(gameObject);
     }
     public virtual bool WasKilled()
     {
@@ -103,9 +103,9 @@ public abstract class Mob : MonoBehaviour
     protected void TieToPlanet(PlanetoidController p)
     {
         Planet = p;
-        if (rbody.gravityScale != 0)
+        if (rigidbody.gravityScale != 0)
         {
-            rbody.gravityScale = 0;
+            rigidbody.gravityScale = 0;
         }
         HandleOrbit();
     }

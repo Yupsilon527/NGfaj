@@ -94,7 +94,7 @@ public class InventoryComponent : MonoBehaviour
             }
             if (!accounted)
             {
-                entries.Add(new InventoryEntry( i.name, 1));
+                entries.Add(new InventoryEntry( i.GetMobName(), 1));
             }
         }
         return entries.ToArray();
@@ -111,7 +111,7 @@ public class InventoryComponent : MonoBehaviour
         }
     }
     public bool IsShop = false;
-    public void SellItem(Player sellingPlayer, ItemMob item)
+    public void SellItem(PlayerMob sellingPlayer, ItemMob item)
     {
         if (Inventory.Contains(item))
         {

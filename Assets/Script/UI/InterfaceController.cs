@@ -25,8 +25,8 @@ public class InterfaceController : MonoBehaviour
     public GameObject helpTooltip;
     Color errorColor = Color.clear;
 
-    Player myPlayer;
-    public void TieToPlayer(Player nPlayer)
+    PlayerMob myPlayer;
+    public void TieToPlayer(PlayerMob nPlayer)
     {
         myPlayer = nPlayer;
     }
