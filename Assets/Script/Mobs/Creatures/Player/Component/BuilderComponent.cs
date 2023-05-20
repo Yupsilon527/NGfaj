@@ -53,6 +53,8 @@ public class BuilderComponent : PlayerComponent
                 if (deploy.TryGetComponent(out BuildingMob buildingmobdata))
                     BuildBuilding(buildingmobdata);
             //SFX player builds/places a new building
+            AudioManager.Instance.PlaySfx("Place Building", 12);
+
         }
         return true;
     }
@@ -61,7 +63,8 @@ public class BuilderComponent : PlayerComponent
         parent.CanMove = false;
         float buildPercent = (building.BuildTime > 0) ? (BuildingSkill * 10 * Time.deltaTime / building.BuildTime) : 100;
 
-    //SFX turn on building looping sound
+        //SFX turn on building looping sound
+        AudioManager.Instance.PlaySfx("Construction", 11, true);
     loopstart:
         yield return new WaitForEndOfFrame();
         buildPercent = Mathf.Min(buildPercent, 100 - building.GetBuildingPercentage());
@@ -82,6 +85,7 @@ public class BuilderComponent : PlayerComponent
     void StopBuilding()
     {
         //SFX stop building looping sound
+        AudioManager.Instance.StopLoopingSfx();
         parent.CanMove = true;
         buildCoroutine = null;
     }

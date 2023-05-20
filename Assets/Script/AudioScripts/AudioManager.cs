@@ -9,9 +9,10 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     public Sound[] sfx, music;
-    public AudioSource sfxSource, musicSource
-        ;
+    public AudioSource sfxSource, musicSource;
     public AudioMixerGroup[] channel;
+
+    private AudioSource loopingSource;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class AudioManager : MonoBehaviour
        
     }
 
-    public void PlaySfx(string name, int sourceIndex)
+    public void PlaySfx(string name, int sourceIndex, bool loop = false)
     {
         Sound s = Array.Find(sfx, x => x.name == name);
 
@@ -44,6 +45,29 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.outputAudioMixerGroup = channel[sourceIndex];
             sfxSource.PlayOneShot(s.clip);
+            AudioSource source = gameObject.AddComponent<AudioSource>();
+
+            if (loop)
+            {
+                loopingSource = source;
+                loopingSource.loop = true;
+                loopingSource.Play();
+            }
+            else
+            {
+                source.PlayOneShot(s.clip);
+                Destroy(source, s.clip.length); // Destroy the one-shot audio source after it finishes playing
+            }
+        }
+    }
+
+    public void StopLoopingSfx()
+    {
+        if (loopingSource != null)
+        {
+            loopingSource.Stop();
+            Destroy(loopingSource);
+            loopingSource = null;
         }
     }
 
