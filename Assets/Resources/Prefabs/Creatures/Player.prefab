@@ -669,6 +669,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
+  posUpdateInterval: 0
   MobName: Player
   renderer: {fileID: 1217918130673713262}
   CanMove: 1

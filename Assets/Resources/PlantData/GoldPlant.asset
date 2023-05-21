@@ -23,7 +23,7 @@ MonoBehaviour:
   FruitPrefab: {fileID: 1957195421440852976, guid: 881f6aa5a003b33428619b1b3f12b8c4, type: 3}
   SeedPrefab: {fileID: 5838067984206625777, guid: d96888d1d0e3be94881a2273486748a8, type: 3}
   SeedCount: 0
-  SpriteSeedling: {fileID: -1559603194, guid: ca6234c216d7f264ebfbd0e3f94f95c4, type: 3}
-  SpriteMiddle: {fileID: -749851380, guid: ca6234c216d7f264ebfbd0e3f94f95c4, type: 3}
-  SpriteAdult: {fileID: -620109675, guid: ca6234c216d7f264ebfbd0e3f94f95c4, type: 3}
-  SpriteDry: {fileID: -1175727217, guid: ca6234c216d7f264ebfbd0e3f94f95c4, type: 3}
+  SpriteSeedling: {fileID: 1916338352, guid: 6479b867632a5194b879a5a097638bc9, type: 3}
+  SpriteMiddle: {fileID: 778973214, guid: 6479b867632a5194b879a5a097638bc9, type: 3}
+  SpriteAdult: {fileID: 1683007419, guid: 6479b867632a5194b879a5a097638bc9, type: 3}
+  SpriteDry: {fileID: 1839025162, guid: 6479b867632a5194b879a5a097638bc9, type: 3}

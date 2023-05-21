@@ -118,11 +118,16 @@ public abstract class Mob : MonoBehaviour
     {
         if (Planet != null)
         {
-            OrbitPoint(Planet.transform.position);
-            //rbody.velocity = -vectorUp.normalized * 2 ;
             gravity.force = -transform.up * 10;
+            if(lastPosUpdate < Time.time)
+            {
+                OrbitPoint(Planet.transform.position);
+                lastPosUpdate = Time.time + posUpdateInterval;
+            }
         }
     }
+    float lastPosUpdate = 0f;
+    public float posUpdateInterval = .1f;
     protected void OrbitPoint(Vector3 point)
     {
         Vector2 vectorUp = (transform.position - point);

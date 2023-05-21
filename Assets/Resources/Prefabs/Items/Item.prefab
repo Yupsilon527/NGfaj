@@ -125,6 +125,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
+  posUpdateInterval: 0.33
   MobName: 
   category: 0
   ediblecategory: 3

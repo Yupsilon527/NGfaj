@@ -145,6 +145,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
+  posUpdateInterval: 0.25
   MobName: Piglet
   renderer: {fileID: 1434695873138036318}
   CanMove: 1
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  jetpackParticles: {fileID: 0}
 --- !u!114 &1434695873138036304
 MonoBehaviour:
   m_ObjectHideFlags: 0
