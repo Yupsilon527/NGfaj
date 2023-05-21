@@ -497,6 +497,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 222666570693592660, guid: 61e6c56b20740ee439523953b7bc9171, type: 3}
   m_PrefabInstance: {fileID: 198113508}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
 --- !u!213 &243921159
 Sprite:
   m_ObjectHideFlags: 0
@@ -707,6 +709,7 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+>>>>>>> Stashed changes
 --- !u!20 &249193839 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6538367616871232135, guid: 6410f3f1631daed42936151a79cae2ee, type: 3}
@@ -8296,7 +8299,11 @@ PrefabInstance:
     - target: {fileID: 4122211004986758166, guid: 5b9511fd97746394db9f16eb27e5f325, type: 3}
       propertyPath: m_Sprite
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 863978123}
+=======
+      objectReference: {fileID: 78511587}
+>>>>>>> Stashed changes
     - target: {fileID: 4736265159237272897, guid: 5b9511fd97746394db9f16eb27e5f325, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 18.75
