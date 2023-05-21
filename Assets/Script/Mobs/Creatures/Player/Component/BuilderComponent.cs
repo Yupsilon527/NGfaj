@@ -19,11 +19,11 @@ public class BuilderComponent : PlayerComponent
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Build/Enter") && activeBuilding != null)
+        if (Input.GetButtonDown("Build/Enter") && activeBuilding != null && activeBuilding.GetBuildingPercentage() < 100)
             BuildBuilding(activeBuilding);
 
     }
-    public bool TryBuildBuilding(GameObject BuildingPrefab, Vector3 buildPos, float orientation)
+    public bool TryBuildBuilding(GameObject BuildingPrefab, Vector3 buildPos)
     {
         if (BuildingPrefab.TryGetComponent(out BuildingMob bmob))
         {

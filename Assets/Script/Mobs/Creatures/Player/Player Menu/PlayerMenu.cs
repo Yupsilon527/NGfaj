@@ -25,7 +25,7 @@ public class PlayerMenu : PlayerComponent
                 lNames.Add(mob.GetMobName());
                 lActions.Add(() =>
                 {
-                    if (parent.builder.TryBuildBuilding(bPrefab, parent.movement.transform.position, transform.rotation.eulerAngles.z))
+                    if (parent.builder.TryBuildBuilding(bPrefab, parent.movement.transform.position))
                     {
                         //SFX build a new building sound
                         AudioManager.Instance.PlaySfx("Build", 7);
