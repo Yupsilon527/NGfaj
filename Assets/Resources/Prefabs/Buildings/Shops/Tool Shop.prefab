@@ -143,9 +143,5 @@ PrefabInstance:
       propertyPath: MobName
       value: Workshop
       objectReference: {fileID: 0}
-    - target: {fileID: 5311549417144444836, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
