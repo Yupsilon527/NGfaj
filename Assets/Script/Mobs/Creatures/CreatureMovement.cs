@@ -71,17 +71,24 @@ public class CreatureMovement : CreatureComponent
             }
         }
     }
+    public ParticleSystem jetpackParticles;
     Coroutine JumpCoroutine;
     IEnumerator JumpFloat()
     {
         float jumpEndTime = Time.time + parent.GetJumpTime();
 
-        while (jumpEndTime >= Time.time && Input.GetButton("Jump"))
+        if (jetpackParticles != null)
+            jetpackParticles.Play();
+
+            while (jumpEndTime >= Time.time && Input.GetButton("Jump"))
         {
             modifiedVelocity.y = parent.JumpSpeed;
             yield return new WaitForFixedUpdate();
         }
         modifiedVelocity.y = parent.MaxJumpSpeed;
+
+        if (jetpackParticles != null)
+            jetpackParticles.Stop();
         JumpCoroutine = null;
     }
 }

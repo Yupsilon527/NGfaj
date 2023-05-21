@@ -55,6 +55,18 @@ PrefabInstance:
       propertyPath: IsMiningDropoff
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5042949912431068500, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042949912431068500, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042949912431068501, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 477ff8b350e2ebd4ca49177bfd09c304, type: 3}
     - target: {fileID: 5042949914330280132, guid: 0e5791371e8cba54ca803bb38110a142, type: 3}
       propertyPath: m_Name
       value: Tool Shop

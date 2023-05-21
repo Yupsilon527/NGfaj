@@ -12,7 +12,6 @@ public class PlayerDigging : PlayerComponent
             if (DiggingCoroutine==null && parent.IsGrounded())
             {
                 StartCoroutine(DiggingTask());
-                AudioManager.Instance.PlaySfx("Dig", 2);
             }
             
         }
@@ -38,6 +37,7 @@ public class PlayerDigging : PlayerComponent
         if (digVector.sqrMagnitude > 0 && lastDigTime < Time.time)
         {
             //SFX player digs 
+            AudioManager.Instance.PlaySfx("Dig", 2);
             lastDigTime = Time.time + parent.GetDigTime();
             new ExplosionData((Vector2)transform.position + digVector * parent.DigRange, parent.DigRadius, 0, 0, parent.GetDigDamage(), 0).Explode();            
         }
