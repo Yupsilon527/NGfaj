@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: efc904250842a574ca5aff6bce217851
+guid: 6479b867632a5194b879a5a097638bc9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TestPlant_0
+      name: AppleTree_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 40
+        width: 100
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1decafc142f0dc4692076309e0f3f62
-      internalID: 1179861178
+      spriteID: 1b6b7cb7971926849889e85a9a4f1953
+      internalID: 1916338352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestPlant_1
+      name: AppleTree_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 100
         y: 0
-        width: 20
-        height: 40
+        width: 100
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,41 +176,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0eec35b80d048644af5453803cf017e
-      internalID: 1378159248
+      spriteID: ca03927f418a5464f9ae990e5b7a16e2
+      internalID: 778973214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestPlant_2
+      name: AppleTree_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 200
         y: 0
-        width: 20
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.44, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10085cd4933b2c34b837c7dee025a791
-      internalID: 812116845
+      spriteID: 76355bf0c527e0b4aaafd20a667022e4
+      internalID: 1683007419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestPlant_3
+      name: AppleTree_3
       rect:
         serializedVersion: 2
-        x: 60
+        x: 300
         y: 0
-        width: 20
-        height: 40
+        width: 100
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46483a229896602489192538b145d89f
-      internalID: 1983338742
+      spriteID: c35a5b386ea5ffc45997223318fd6639
+      internalID: 1839025162
       vertices: []
       indices: 
       edges: []
@@ -235,10 +235,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TestPlant_0: 1179861178
-      TestPlant_1: 1378159248
-      TestPlant_2: 812116845
-      TestPlant_3: 1983338742
+      AppleTree_0: 1916338352
+      AppleTree_1: 778973214
+      AppleTree_2: 1683007419
+      AppleTree_3: 1839025162
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

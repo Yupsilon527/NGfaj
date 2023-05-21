@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: FruitPlant
   m_EditorClassIdentifier: 
   PlantName: Apple
-  PlantGrowthTime: 600
+  PlantGrowthTime: 200
   PlantHunger: 0.75
   PlantHealth: 100
   PlantAdultCycles: 600
   OxygenProduction: 0.1
-  FruitChance: 3
+  FruitChance: 7
   FruitDropChance: 3
   FruitPrefab: {fileID: 1957195421440852976, guid: fbbbfdfc812a0ea449016a5d3baa5374, type: 3}
   SeedPrefab: {fileID: 5838067984206625777, guid: e5b47aac392df7a428f9c5f993af7d96, type: 3}
   SeedCount: 2
-  SpriteSeedling: {fileID: 1179861178, guid: efc904250842a574ca5aff6bce217851, type: 3}
-  SpriteMiddle: {fileID: 1378159248, guid: efc904250842a574ca5aff6bce217851, type: 3}
-  SpriteAdult: {fileID: 812116845, guid: efc904250842a574ca5aff6bce217851, type: 3}
-  SpriteDry: {fileID: 1983338742, guid: efc904250842a574ca5aff6bce217851, type: 3}
+  SpriteSeedling: {fileID: 1916338352, guid: 73de7b3ca08cc2b41abad229da237a15, type: 3}
+  SpriteMiddle: {fileID: 778973214, guid: 73de7b3ca08cc2b41abad229da237a15, type: 3}
+  SpriteAdult: {fileID: 1683007419, guid: 73de7b3ca08cc2b41abad229da237a15, type: 3}
+  SpriteDry: {fileID: 1839025162, guid: 73de7b3ca08cc2b41abad229da237a15, type: 3}

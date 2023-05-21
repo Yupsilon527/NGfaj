@@ -38,7 +38,7 @@ public class BuilderComponent : PlayerComponent
                 buildPos = GroundRay.direction * 3 + GroundRay.origin;
             }
 
-            if (!bmob.CanBeBuildThere(buildPos, orientation))
+            if (!bmob.CanBeBuildThere(buildPos,transform))
             {
                 InterfaceController.main.ShowWarning("Invalid Building Position",3);
                 return false;

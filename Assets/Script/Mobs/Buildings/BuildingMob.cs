@@ -9,9 +9,9 @@ public class BuildingMob : Mob
     public float BuildCost = 100;
     public float BuildTime = 10;
 
-    public bool CanBeBuildThere(Vector2 center, Transform builder, float angle)
+    public bool CanBeBuildThere(Vector2 center, Transform builder)
     {
-        foreach (RaycastHit2D collision in Physics2D.BoxCastAll(center + (Vector2)builder.up * ConstructionCollider.offset.y, ConstructionCollider.size*.5f, angle, Vector2.zero,0, LayerMask.GetMask( "Foreground" ) ))
+        foreach (RaycastHit2D collision in Physics2D.BoxCastAll(center + (Vector2)builder.up * ConstructionCollider.offset.y, ConstructionCollider.size*.5f, builder.rotation.eulerAngles.z, Vector2.zero,0, LayerMask.GetMask( "Foreground" ) ))
         {
             if (collision.transform.tag == "Building")
             {
