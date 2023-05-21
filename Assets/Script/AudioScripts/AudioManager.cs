@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.outputAudioMixerGroup = channel[sourceIndex];
             sfxSource.PlayOneShot(s.clip);
-            AudioSource source = gameObject.AddComponent<AudioSource>();
+           /* AudioSource source = gameObject.AddComponent<AudioSource>();
 
             if (loop)
             {
@@ -58,6 +58,7 @@ public class AudioManager : MonoBehaviour
                 source.PlayOneShot(s.clip);
                 Destroy(source, s.clip.length); // Destroy the one-shot audio source after it finishes playing
             }
+           */
         }
     }
 

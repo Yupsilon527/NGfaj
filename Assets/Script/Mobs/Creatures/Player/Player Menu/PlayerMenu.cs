@@ -28,7 +28,7 @@ public class PlayerMenu : PlayerComponent
                     if (parent.builder.TryBuildBuilding(bPrefab, parent.movement.transform.position))
                     {
                         //SFX build a new building sound
-                        AudioManager.Instance.PlaySfx("Build", 7);
+                       // AudioManager.Instance.PlaySfx("Build", 7);
                         source.Kill();
                     }
                     return true;

@@ -25,6 +25,7 @@ public class InventoryComponent : MonoBehaviour
             Inventory.Add(item);
             item.OnMoveToContainer(this);
             return true;
+            
         }
         return false;
     }
@@ -41,6 +42,7 @@ public class InventoryComponent : MonoBehaviour
         Inventory.Remove(item);
         item.container = null;
         item.OnDrop();
+        AudioManager.Instance.PlaySfx("Drop Item", 10);
     }
     public void TransferItem(InventoryComponent otherInventory)
     {
