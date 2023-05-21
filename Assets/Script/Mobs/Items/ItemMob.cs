@@ -45,6 +45,7 @@ public class ItemMob : Mob
             container.UnloadItem(this);
         container = ncontainer;
         gameObject.SetActive(false);
+        AudioManager.Instance.PlaySfx("Pickup Item", 6);
     }
     public void DropFromContainer()
     {

@@ -31,6 +31,7 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
                     {
                         Debug.Log("[PlayerCarryItem] Try activate item " + item.name);
                         item.OnActivate(parent);
+                        
                     }
                 }
             }
@@ -57,6 +58,9 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
     {
         if (!TouchedItems.Contains(item))
             TouchedItems.Add(item);
+        
+
+
 
     }
     public void OnTouchExit(ItemMob item)
@@ -70,6 +74,8 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
         if (TouchedItems.Count > 0)
             return TouchedItems[0];
         return null;
+        
+
     }
     bool TryPickItem()
     {
@@ -93,15 +99,17 @@ public class PlayerItemHolding : PlayerComponent, iItemToucher
         {
             Debug.Log("[PlayerCarryItem] Pick up " + item.name);            
             return parent.backpack.LoadItem(item);
-            AudioManager.Instance.PlaySfx("Pickup Item", 6);
+            
+
         }
         return true;
+        
     }
     public void DropItem()
     {
         Debug.Log("[PlayerCarryItem] Drop held item " + parent.backpack.name);
         parent.backpack.UnloadItem(parent.backpack.GetActiveItem());
-        AudioManager.Instance.PlaySfx("Drop Item", 10);
+        
 
     }
 }

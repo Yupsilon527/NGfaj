@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CreatureMovement : CreatureComponent
 {
+
+    
+
     protected void FixedUpdate()
     {
             HandleMovement();
@@ -50,20 +53,35 @@ public class CreatureMovement : CreatureComponent
     {
         if (parent.IsGrounded() && parent.CanMove)
         {
+
+            
             if (Input.GetButton("Jump") && JumpCoroutine == null)
             {
                 parent.LastGroundTime = 0;
                 JumpCoroutine = StartCoroutine(JumpFloat());
+
+                AudioManager.Instance.PlaySfx("Jump", 0);
+
+
+
+
+
             }
         }
         else
         {
             if (Input.GetButton("Jump"))
             {
+
+                
+
                 if (modifiedVelocity.y < -parent.MaxGlideSpeed)
                 {
                     modifiedVelocity.y = -parent.MaxGlideSpeed;
+
                 }
+
+                
             }
             else if (modifiedVelocity.y < -parent.MaxFallSpeed)
             {
@@ -77,11 +95,13 @@ public class CreatureMovement : CreatureComponent
     {
         float jumpEndTime = Time.time + parent.GetJumpTime();
 
-        if (jetpackParticles != null)
+        if (jetpackParticles != null) 
             jetpackParticles.Play();
+        
 
-            while (jumpEndTime >= Time.time && Input.GetButton("Jump"))
+        while (jumpEndTime >= Time.time && Input.GetButton("Jump"))
         {
+            
             modifiedVelocity.y = parent.JumpSpeed;
             yield return new WaitForFixedUpdate();
         }
