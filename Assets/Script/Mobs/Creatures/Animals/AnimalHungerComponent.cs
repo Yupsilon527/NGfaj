@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimalHungerComponent : AnimalComponent
+public class AnimalHungerComponent : AnimalComponent, iItemToucher
 {
     public Resource Hunger;
     public float HungerDecay = 5;
@@ -68,7 +68,7 @@ public class AnimalHungerComponent : AnimalComponent
             }
         }
     }
-        public bool TryEatItem(ItemMob food)
+         bool TryEatItem(ItemMob food)
     {
             foreach (DigestResult diet in Diet)
             {

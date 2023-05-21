@@ -565,6 +565,8 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
+  FreeRotation: 1
+  posUpdateInterval: 9999
   MobName: Small Forest
   ConstructionCollider: {fileID: 7346579238120891049}
   BuildingTexture: {fileID: 0}

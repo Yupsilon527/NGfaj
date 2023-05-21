@@ -56,7 +56,7 @@ public class ItemMob : Mob
     {
         SetSuspended(false);
         gameObject.SetActive(true);
-        HandleOrbit();
+        HandleOrbit(true);
     }
     public override void Kill()
     {

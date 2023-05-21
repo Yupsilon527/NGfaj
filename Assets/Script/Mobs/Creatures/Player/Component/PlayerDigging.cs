@@ -44,7 +44,7 @@ public class PlayerDigging : PlayerComponent
     }
     void MoveDigDirection()
     {
-        parent.gravity.relativeForce = parent.WalkSpeed * digVector.x * parent.MoveSpeedMultiplier * parent.transform.right;
+        parent.gravity.relativeForce = parent.WalkSpeed * digVector.x * parent.MoveSpeedMultiplier * Vector2.right;
     }
     public void StopDigging()
     {

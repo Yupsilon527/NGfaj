@@ -65,10 +65,10 @@ public class PlixelMapMob : Mob
 
         return newChunk.GetComponent<PlixelMapMob>();
     }
-    protected override void HandleOrbit()
+    protected override void HandleOrbit(bool forced)
     {
         if (Planet.gameObject != gameObject)
-            base.HandleOrbit();
+            base.HandleOrbit(forced);
     }
 
     public PlixelMapMob BreakChunk(Plixel[] chunk)

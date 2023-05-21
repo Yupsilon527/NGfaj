@@ -37,7 +37,7 @@ public abstract class Mob : MonoBehaviour
         }
         else if (!suspended)
         {
-            HandleOrbit();
+            HandleOrbit(false);
         }
     }
     public virtual void Register()
@@ -112,28 +112,30 @@ public abstract class Mob : MonoBehaviour
         {
             rigidbody.gravityScale = 0;
         }
-        HandleOrbit();
+        HandleOrbit(true);
     }
-    protected virtual void HandleOrbit()
+
+    public bool FreeRotation = false;
+    protected virtual void HandleOrbit(bool force)
     {
         if (Planet != null)
         {
-            gravity.force = -transform.up * 10;
-            if(lastPosUpdate < Time.time)
+            gravity.force = -vectorUp * 10;
+            if(force ||(!FreeRotation && nextPosUpdate < Time.time))
             {
                 OrbitPoint(Planet.transform.position);
-                lastPosUpdate = Time.time + posUpdateInterval;
+                nextPosUpdate = Time.time + posUpdateInterval;
             }
         }
     }
-    float lastPosUpdate = 0f;
+    float nextPosUpdate = 0f;
     public float posUpdateInterval = .1f;
+    Vector2 vectorUp = Vector2.zero;
     protected void OrbitPoint(Vector3 point)
     {
-        Vector2 vectorUp = (transform.position - point);
-       
+        vectorUp = (transform.position - point).normalized;
         if (Mathf.Abs(vectorUp.x) > .05f)
-        transform.up = vectorUp;
+            transform.up = vectorUp;
        
     }
     public string MobName = "";
