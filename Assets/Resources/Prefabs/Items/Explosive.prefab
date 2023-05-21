@@ -94,6 +94,7 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   gravity: {fileID: 0}
   Planet: {fileID: 0}
+  posUpdateInterval: 0.1
   MobName: Explosive
   category: 0
   ediblecategory: 3
@@ -102,6 +103,7 @@ MonoBehaviour:
   ThrowSpeed: 6
   GoldValue: 0
   StartSuspended: 0
+  ExplosionEffect: {fileID: 1474804383275271558, guid: c872ad9f7e0471b459a0c58f935e38b4, type: 3}
   DetonationForce: 10
   DetonationDuration: 0
   ExplosionRadius:
